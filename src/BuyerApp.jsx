@@ -1584,8 +1584,11 @@ function CartSidebar({cart,setCart,onCheckout,onClose}) {
 }
 
 // ── CHECKOUT CONFIRMATION ─────────────────────────────────────────────────────
-function OrderConfirmed({cart,onDone}) {
-  const [paymentMethod,setPaymentMethod] = React.useState("credit");
+function OrderConfirmed({cart,onDone,onTrackOrders}) {
+  const [paymentMethod,setPaymentMethod] = useState(null);
+  const [placed, setPlaced] = useState(false);
+  const orderId = useState("ORD-"+Date.now().toString().slice(-6))[0];
+
   const total = cart.reduce((s,i)=>s+i.seller.netrate*i.qty,0);
   const gst = total * 0.12;
   const sellers = [...new Set(cart.map(i=>i.seller.firm))];
@@ -1594,44 +1597,85 @@ function OrderConfirmed({cart,onDone}) {
     acc[item.seller.firm].items.push(item);
     return acc;
   },{});
-  
+
   const paymentOptions = [
-    {id:"credit",label:"Fundly Credit",desc:"Use your credit limit",icon:"💳"},
-    {id:"dispatch",label:"Pay Before Dispatch",desc:"Pay when order is ready",icon:"📦"},
-    {id:"delivery",label:"Pay on Delivery",desc:"Cash/UPI on delivery",icon:"🚚"}
+    {id:"credit",   label:"Fundly Credit",        desc:"Use your available credit limit",  icon:"💳"},
+    {id:"dispatch", label:"Pay Before Dispatch",   desc:"Pay once seller packs the order",  icon:"📦"},
+    {id:"delivery", label:"Pay on Delivery",       desc:"Cash / UPI at the time of delivery",icon:"🚚"},
   ];
-  
+
+  /* ── POST-CONFIRM SUCCESS SCREEN ── */
+  if(placed) return (
+    <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",
+      background:C.bg,padding:24}}>
+      <div style={{maxWidth:520,width:"100%",textAlign:"center"}}>
+        {/* tick */}
+        <div style={{width:80,height:80,borderRadius:40,margin:"0 auto 20px",
+          background:`linear-gradient(135deg,${C.lgreen},#A7F3D0)`,
+          border:`3px solid ${C.green}`,display:"flex",alignItems:"center",
+          justifyContent:"center",fontSize:40,boxShadow:"0 8px 24px rgba(5,150,105,.15)"}}>
+          ✓
+        </div>
+        <div style={{fontSize:22,fontWeight:800,color:C.navy,marginBottom:6}}>
+          Order Confirmed!
+        </div>
+        <div style={{fontSize:13,color:C.text2,marginBottom:4}}>
+          Order <span style={{fontWeight:700,color:C.teal}}>{orderId}</span> placed successfully.
+        </div>
+        {/* notification banner */}
+        <div style={{background:"#EFF6FF",border:`1.5px solid ${C.blue}`,borderRadius:10,
+          padding:"14px 20px",margin:"18px 0",display:"flex",alignItems:"flex-start",gap:12,
+          textAlign:"left"}}>
+          <span style={{fontSize:22,flexShrink:0}}>🔔</span>
+          <div>
+            <div style={{fontSize:13,fontWeight:700,color:"#1E40AF",marginBottom:3}}>
+              Awaiting seller approval
+            </div>
+            <div style={{fontSize:12,color:"#3B82F6",lineHeight:1.5}}>
+              Your order has been sent to {sellers.length} seller{sellers.length>1?"s":""}. They will approve and acknowledge within <strong>2 hours</strong>. We'll notify you as soon as it's accepted.
+            </div>
+          </div>
+        </div>
+        {/* payment summary */}
+        <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
+          padding:"10px 16px",marginBottom:20,display:"flex",justifyContent:"space-between",
+          alignItems:"center"}}>
+          <div style={{fontSize:11,color:C.text3}}>
+            {paymentOptions.find(p=>p.id===paymentMethod)?.icon}{" "}
+            {paymentOptions.find(p=>p.id===paymentMethod)?.label}
+          </div>
+          <div style={{fontSize:16,fontWeight:800,color:C.teal}}>{fmt(total+gst)}</div>
+        </div>
+        <div style={{display:"flex",gap:10}}>
+          <Btn variant="primary" full onClick={onDone} style={{fontSize:12}}>
+            Continue Shopping
+          </Btn>
+          <Btn variant="ghost" full onClick={onTrackOrders} style={{fontSize:12}}>
+            Track Orders
+          </Btn>
+        </div>
+      </div>
+    </div>
+  );
+
+  /* ── STEP 1: REVIEW + SELECT PAYMENT ── */
   return (
     <div style={{flex:1,display:"flex",justifyContent:"center",
       padding:"16px",background:C.bg,overflowY:"auto"}}>
       <div style={{maxWidth:900,width:"100%"}}>
-        {/* Success header */}
-        <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
-          padding:"12px 16px",marginBottom:12,display:"flex",alignItems:"center",gap:12}}>
-          <div style={{width:50,height:50,borderRadius:25,
-            background:`linear-gradient(135deg, ${C.lgreen} 0%, #A7F3D0 100%)`,
-            display:"flex",alignItems:"center",justifyContent:"center",
-            fontSize:28,border:`2px solid ${C.green}`,flexShrink:0}}>
-            ✓
-          </div>
-          <div style={{flex:1}}>
-            <div style={{fontSize:16,fontWeight:800,color:C.navy,marginBottom:1}}>
-              Order Placed Successfully!
-            </div>
-            <div style={{fontSize:10,color:C.text3}}>
-              Order ID: ORD-{Date.now().toString().slice(-6)} • {sellers.length} seller{sellers.length>1?"s":""}
-            </div>
-          </div>
-          <div style={{textAlign:"right"}}>
-            <div style={{fontSize:9,color:C.text3,marginBottom:1}}>Total Amount</div>
-            <div style={{fontSize:18,fontWeight:800,color:C.teal}}>{fmt(total+gst)}</div>
+
+        {/* Page header */}
+        <div style={{marginBottom:14}}>
+          <div style={{fontSize:17,fontWeight:800,color:C.navy}}>Review & Pay</div>
+          <div style={{fontSize:11,color:C.text3,marginTop:2}}>
+            Confirm your order and choose a payment method
           </div>
         </div>
 
         <div style={{display:"grid",gridTemplateColumns:"2fr 1fr",gap:12}}>
-          {/* Left - Orders */}
+          {/* Left - Order items */}
           <div>
-            {Object.values(bySeller).map(({seller,items},idx)=>(
+            {Object.values(bySeller).map(({seller,items})=>(
               <div key={seller.firm} style={{background:C.white,border:`1.5px solid ${C.border}`,
                 borderRadius:8,marginBottom:10,overflow:"hidden"}}>
                 <div style={{background:C.navy,padding:"8px 12px",display:"flex",alignItems:"center",gap:8}}>
@@ -1652,7 +1696,7 @@ function OrderConfirmed({cart,onDone}) {
                       <div style={{fontSize:20}}>{item.product.img}</div>
                       <div style={{flex:1}}>
                         <div style={{fontSize:11,fontWeight:700,color:C.text}}>{item.product.name}</div>
-                        <div style={{fontSize:9,color:C.text3}}>{fmt(item.seller.netrate)} × {item.qty}</div>
+                        <div style={{fontSize:9,color:C.text3}}>{fmt(item.seller.netrate)} × {item.qty} strips</div>
                       </div>
                       <div style={{fontSize:12,fontWeight:800,color:C.teal}}>
                         {fmt(item.seller.netrate*item.qty)}
@@ -1661,7 +1705,7 @@ function OrderConfirmed({cart,onDone}) {
                   ))}
                 </div>
                 <div style={{background:C.bg,padding:"8px 12px",display:"flex",justifyContent:"space-between"}}>
-                  <span style={{fontSize:10,color:C.text2}}>Total (incl. GST)</span>
+                  <span style={{fontSize:10,color:C.text2}}>Subtotal (incl. GST)</span>
                   <span style={{fontSize:12,fontWeight:800,color:C.navy}}>
                     {fmt(items.reduce((s,i)=>s+i.seller.netrate*i.qty,0)*1.12)}
                   </span>
@@ -1670,55 +1714,74 @@ function OrderConfirmed({cart,onDone}) {
             ))}
           </div>
 
-          {/* Right - Payment & Actions */}
+          {/* Right - Payment + CTA */}
           <div>
+            {/* Order total summary */}
+            <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
+              padding:"12px",marginBottom:10}}>
+              <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:8}}>Order Summary</div>
+              {[
+                ["Subtotal", fmt(total)],
+                ["GST (12%)", fmt(gst)],
+              ].map(([l,v])=>(
+                <div key={l} style={{display:"flex",justifyContent:"space-between",
+                  fontSize:11,color:C.text2,marginBottom:4}}>
+                  <span>{l}</span><span style={{fontWeight:600}}>{v}</span>
+                </div>
+              ))}
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:800,
+                paddingTop:8,borderTop:`1px solid ${C.border}`,marginTop:4}}>
+                <span style={{color:C.text}}>Total</span>
+                <span style={{color:C.teal}}>{fmt(total+gst)}</span>
+              </div>
+            </div>
+
             {/* Payment method */}
             <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
               padding:"12px",marginBottom:10}}>
-              <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:8}}>Payment Method</div>
+              <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:8}}>
+                Select Payment Method
+              </div>
               {paymentOptions.map(opt=>(
                 <div key={opt.id} onClick={()=>setPaymentMethod(opt.id)}
-                  style={{padding:"8px 10px",border:`1.5px solid ${paymentMethod===opt.id?C.teal:C.border}`,
+                  style={{padding:"9px 10px",border:`1.5px solid ${paymentMethod===opt.id?C.teal:C.border}`,
                     borderRadius:6,marginBottom:6,cursor:"pointer",
-                    background:paymentMethod===opt.id?C.bg:C.white,transition:"all .15s"}}
+                    background:paymentMethod===opt.id?"#F0FDFF":C.white,transition:"all .15s"}}
                   onMouseEnter={e=>{if(paymentMethod!==opt.id)e.currentTarget.style.borderColor=C.text3}}
                   onMouseLeave={e=>{if(paymentMethod!==opt.id)e.currentTarget.style.borderColor=C.border}}>
-                  <div style={{display:"flex",alignItems:"center",gap:6}}>
-                    <span style={{fontSize:16}}>{opt.icon}</span>
+                  <div style={{display:"flex",alignItems:"center",gap:8}}>
+                    <span style={{fontSize:18}}>{opt.icon}</span>
                     <div style={{flex:1}}>
-                      <div style={{fontSize:10,fontWeight:700,color:C.text}}>{opt.label}</div>
-                      <div style={{fontSize:8,color:C.text3}}>{opt.desc}</div>
+                      <div style={{fontSize:11,fontWeight:700,color:C.text}}>{opt.label}</div>
+                      <div style={{fontSize:9,color:C.text3}}>{opt.desc}</div>
                     </div>
-                    {paymentMethod===opt.id&&<div style={{width:16,height:16,borderRadius:8,
-                      background:C.teal,display:"flex",alignItems:"center",justifyContent:"center",
-                      fontSize:10,color:C.white}}>✓</div>}
+                    <div style={{width:16,height:16,borderRadius:8,
+                      border:`2px solid ${paymentMethod===opt.id?C.teal:C.border}`,
+                      background:paymentMethod===opt.id?C.teal:C.white,
+                      display:"flex",alignItems:"center",justifyContent:"center",
+                      fontSize:9,color:C.white,transition:"all .15s",flexShrink:0}}>
+                      {paymentMethod===opt.id?"✓":""}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Next steps */}
-            <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
-              padding:"12px",marginBottom:10}}>
-              <div style={{fontSize:11,fontWeight:700,color:C.navy,marginBottom:8}}>What's Next?</div>
-              {[
-                {icon:"✅",text:"Seller acknowledgment in 2hrs"},
-                {icon:"📦",text:"Dispatch as per timeline"},
-                {icon:"📄",text:"GST invoices per seller"}
-              ].map((step,i)=>(
-                <div key={i} style={{display:"flex",gap:6,marginBottom:i<2?6:0}}>
-                  <span style={{fontSize:12}}>{step.icon}</span>
-                  <span style={{fontSize:10,color:C.text2}}>{step.text}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Actions */}
-            <Btn variant="primary" full onClick={onDone} style={{marginBottom:8,fontSize:11}}>
-              Continue Shopping
+            {/* Confirm button */}
+            <Btn variant="primary" full
+              onClick={()=>{ if(paymentMethod) setPlaced(true); }}
+              style={{height:40,fontSize:13,fontWeight:700,
+                opacity:paymentMethod?1:0.45,
+                cursor:paymentMethod?"pointer":"not-allowed",marginBottom:6}}>
+              Confirm & Place Order →
             </Btn>
-            <Btn variant="ghost" full style={{fontSize:11}}>
-              Track Orders
+            {!paymentMethod&&(
+              <div style={{fontSize:10,color:C.amber,textAlign:"center",marginBottom:6}}>
+                ⚠ Please select a payment method to proceed
+              </div>
+            )}
+            <Btn variant="ghost" full onClick={onDone} style={{fontSize:11}}>
+              Cancel
             </Btn>
           </div>
         </div>
@@ -2305,7 +2368,7 @@ export default function BuyerApp() {
               onAddToCart={handleAddToCart} cart={cart}/>
           )}
           {screen==="confirmed"&&(
-            <OrderConfirmed cart={cart} onDone={handleDone}/>
+            <OrderConfirmed cart={cart} onDone={handleDone} onTrackOrders={()=>{handleDone();setScreen("orders");}}/>
           )}
           {screen==="orders"&&(
             <MyOrders onProductSelect={handleProductSelect} onViewOrder={(id)=>{setActiveOrderId(id);setScreen("orderDetail");}}/>
