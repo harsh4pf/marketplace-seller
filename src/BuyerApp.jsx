@@ -147,6 +147,86 @@ const PRODUCTS = [
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:11.90,disc:15,stock:1600,exp:"Apr 2028",del:"2 days",rating:4.5,reviews:89},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:12.60,disc:10,stock:1200,exp:"Jun 2028",del:"1 day",rating:4.6,reviews:54},
     ]},
+  { id:17, name:"Duolin Respules", mol:"Levosalbutamol + Ipratropium", mfr:"Cipla",
+    form:"Respule", pack:"Box of 30", sched:"H", hsn:"30049099", gst:12,
+    ptr:165.00, mrp:215.00, img:"💊", category:"Respiratory", sub:"Bronchodilators",
+    tag:"trending",
+    sellers:[
+      {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:140.25,disc:15,stock:220,exp:"Aug 2028",del:"1 day",rating:4.8,reviews:142},
+      {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:148.50,disc:10,stock:180,exp:"Oct 2028",del:"3 days",rating:4.2,reviews:67},
+    ]},
+  { id:18, name:"Glimiprex 1mg", mol:"Glimepiride 1mg", mfr:"Sun Pharma",
+    form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:24.50, mrp:32.00, img:"💊", category:"Diabetology", sub:"Sulfonylureas",
+    tag:"deal",
+    sellers:[
+      {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:20.83,disc:15,stock:420,exp:"Sep 2028",del:"1 day",rating:4.7,reviews:203},
+      {id:"s2",firm:"MedStock",   city:"Pune",  netrate:22.05,disc:10,stock:350,exp:"Dec 2028",del:"2 days",rating:4.5,reviews:89},
+    ]},
+  { id:19, name:"Metolar 50mg", mol:"Metoprolol Tartrate 50mg", mfr:"Cipla",
+    form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:32.00, mrp:42.00, img:"💊", category:"Cardiology", sub:"Beta Blockers",
+    tag:"trending",
+    sellers:[
+      {id:"s4",firm:"CityMeds",   city:"Thane", netrate:27.20,disc:15,stock:290,exp:"Jul 2028",del:"1 day",rating:4.6,reviews:54},
+      {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:28.80,disc:10,stock:240,exp:"Nov 2028",del:"1 day",rating:4.8,reviews:142},
+    ]},
+  { id:20, name:"Pan-D", mol:"Pantoprazole 40mg + Domperidone 30mg", mfr:"Alkem",
+    form:"Capsule", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:78.00, mrp:102.00, img:"💊", category:"Gastroenterology", sub:"PPI + Prokinetic",
+    tag:"deal",
+    sellers:[
+      {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:66.30,disc:15,stock:380,exp:"Jan 2029",del:"3 days",rating:4.2,reviews:67},
+      {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:70.20,disc:10,stock:310,exp:"Mar 2029",del:"1 day",rating:4.7,reviews:203},
+    ]},
+  { id:21, name:"Mox 500mg", mol:"Amoxicillin 500mg", mfr:"Cipla",
+    form:"Capsule", pack:"Strip of 6", sched:"H", hsn:"30041020", gst:12,
+    ptr:48.00, mrp:62.00, img:"💊", category:"Anti-infectives", sub:"Penicillins",
+    tag:"trending",
+    sellers:[
+      {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:40.80,disc:15,stock:500,exp:"Aug 2028",del:"1 day",rating:4.8,reviews:142},
+      {id:"s2",firm:"MedStock",   city:"Pune",  netrate:43.20,disc:10,stock:400,exp:"Dec 2028",del:"2 days",rating:4.5,reviews:89},
+    ]},
+  { id:22, name:"Seroflo 250", mol:"Salmeterol 25mcg + Fluticasone 250mcg", mfr:"Cipla",
+    form:"Inhaler", pack:"1 inhaler", sched:"H", hsn:"30049099", gst:12,
+    ptr:285.00, mrp:365.00, img:"💊", category:"Respiratory", sub:"ICS + LABA",
+    tag:"deal",
+    sellers:[
+      {id:"s4",firm:"CityMeds",   city:"Thane", netrate:242.25,disc:15,stock:180,exp:"Jul 2028",del:"1 day",rating:4.6,reviews:54},
+      {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:256.50,disc:10,stock:150,exp:"Oct 2028",del:"3 days",rating:4.2,reviews:67},
+    ]},
+  { id:23, name:"Lantus SoloStar", mol:"Insulin Glargine 100IU/ml", mfr:"Sanofi",
+    form:"Injection", pack:"1 pen (3ml)", sched:"H", hsn:"30049099", gst:12,
+    ptr:520.00, mrp:650.00, img:"💊", category:"Diabetology", sub:"Basal Insulin",
+    tag:"trending",
+    sellers:[
+      {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:442.00,disc:15,stock:200,exp:"Jan 2029",del:"1 day",rating:4.7,reviews:203},
+      {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:468.00,disc:10,stock:160,exp:"Apr 2029",del:"1 day",rating:4.8,reviews:142},
+    ]},
+  { id:24, name:"Diamicron MR 60mg", mol:"Gliclazide 60mg", mfr:"Servier",
+    form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:55.00, mrp:72.00, img:"💊", category:"Diabetology", sub:"Sulfonylureas",
+    tag:"deal",
+    sellers:[
+      {id:"s2",firm:"MedStock",   city:"Pune",  netrate:46.75,disc:15,stock:350,exp:"Sep 2028",del:"2 days",rating:4.5,reviews:89},
+      {id:"s4",firm:"CityMeds",   city:"Thane", netrate:49.50,disc:10,stock:280,exp:"Nov 2028",del:"1 day",rating:4.6,reviews:54},
+    ]},
+  { id:25, name:"Wysolone 10mg", mol:"Prednisolone 10mg", mfr:"Pfizer",
+    form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:18.50, mrp:24.00, img:"💊", category:"CNS", sub:"Corticosteroids",
+    tag:"trending",
+    sellers:[
+      {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:15.73,disc:15,stock:600,exp:"Jun 2028",del:"1 day",rating:4.8,reviews:142},
+      {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:16.65,disc:10,stock:500,exp:"Aug 2028",del:"3 days",rating:4.2,reviews:67},
+    ]},
+  { id:26, name:"Asthalin 4mg", mol:"Salbutamol 4mg", mfr:"Cipla",
+    form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
+    ptr:12.00, mrp:16.00, img:"💊", category:"Respiratory", sub:"Bronchodilators",
+    tag:"deal",
+    sellers:[
+      {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:10.20,disc:15,stock:1200,exp:"Jul 2028",del:"1 day",rating:4.7,reviews:203},
+      {id:"s2",firm:"MedStock",   city:"Pune",  netrate:10.80,disc:10,stock:900,exp:"Sep 2028",del:"2 days",rating:4.5,reviews:89},
+    ]},
 ];
 
 const SELLER_SCHEMES = {
@@ -190,11 +270,11 @@ function StarRating({rating}) {
 function Btn({children,variant="default",onClick,sm,full,disabled,style={}}) {
   const v={
     default:{background:C.white,color:C.text,border:`1px solid ${C.border2}`},
-    primary:{background:C.teal,color:C.white,border:`1px solid ${C.teal}`},
-    success:{background:C.green,color:C.white,border:`1px solid ${C.green}`},
-    accent: {background:C.accent,color:C.white,border:`1px solid ${C.accent}`},
-    navy:   {background:C.navy,color:C.white,border:`1px solid ${C.navy}`},
-    ghost:  {background:"transparent",color:C.teal,border:`1px solid ${C.teal}`},
+    primary:{background:"#16558B",color:C.white,border:`1px solid #16558B`},
+    success:{background:"#16558B",color:C.white,border:`1px solid #16558B`},
+    accent: {background:"#16558B",color:C.white,border:`1px solid #16558B`},
+    navy:   {background:"#16558B",color:C.white,border:`1px solid #16558B`},
+    ghost:  {background:"transparent",color:"#16558B",border:`1px solid #16558B`},
   }[variant]||{background:C.white,color:C.text,border:`1px solid ${C.border2}`};
   return <button onClick={onClick} disabled={disabled} style={{
     ...v,height:sm?30:38,padding:sm?"0 12px":"0 18px",borderRadius:8,
@@ -422,11 +502,11 @@ function SearchBar({onSearch,onProductSelect,big}) {
         {q&&<button onClick={()=>setQ("")} style={{background:"none",border:"none",cursor:"pointer",
           color:C.text3,padding:"0 8px",fontSize:16,flexShrink:0}}>×</button>}
         <button onClick={()=>{if(q){onSearch(q);setFocused(false);}}}
-          style={{height:big?48:40,padding:"0 18px",background:C.teal,border:"none",
+          style={{height:big?48:40,padding:"0 18px",background:"#16558B",border:"none",
           cursor:"pointer",fontSize:13,fontWeight:700,color:C.white,flexShrink:0,
           transition:"background .15s"}}
-          onMouseEnter={e=>e.currentTarget.style.background=C.teal2}
-          onMouseLeave={e=>e.currentTarget.style.background=C.teal}>
+          onMouseEnter={e=>e.currentTarget.style.background="#1E3A5F"}
+          onMouseLeave={e=>e.currentTarget.style.background="#16558B"}>
           Search
         </button>
       </div>
@@ -499,73 +579,6 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
         <div style={{fontSize:72,position:"relative",zIndex:1,flexShrink:0}}>🩸</div>
       </div>
 
-      {/* Live Schemes Section */}
-      <div style={{padding:"0 20px",marginBottom:20}}>
-        <SectionHead title="Active Seller Schemes" sub="Limited period · Auto-applied on eligible orders"
-          action={{label:"View all",fn:()=>{}}}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
-          {[
-            {seller:"Joth Pharma", city:"Mumbai",  ...SELLER_SCHEMES.s1, products:"All products",expires:"Ends 15 Jun"},
-            {seller:"MedStock",    city:"Pune",    ...SELLER_SCHEMES.s2, products:"All products",expires:"Ends 18 Jun"},
-            {seller:"PharmaDepot", city:"Delhi",   ...SELLER_SCHEMES.s3, products:"All products",expires:"Ends 20 Jun"},
-            {seller:"Apollo Dist", city:"Chennai", ...SELLER_SCHEMES.s5, products:"Orders ≥50 units",expires:"Ends 25 Jun"},
-          ].map((s,i)=>{
-            const sellerInitial = s.seller.charAt(0);
-            return (
-            <div key={i} style={{background:C.white,borderRadius:10,padding:0,
-              border:`1.5px solid ${C.border}`,position:"relative",overflow:"hidden",
-              boxShadow:"0 1px 3px rgba(0,0,0,.04)",transition:"all .2s ease",cursor:"default"}}
-              onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 6px 16px rgba(10,35,66,.08)";e.currentTarget.style.transform="translateY(-2px)";e.currentTarget.style.borderColor=s.text}}
-              onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,.04)";e.currentTarget.style.transform="translateY(0)";e.currentTarget.style.borderColor=C.border}}>
-              {/* Left accent bar */}
-              <div style={{position:"absolute",left:0,top:0,bottom:0,width:4,background:s.text}}></div>
-
-              <div style={{padding:"16px 14px 14px 18px"}}>
-                {/* Seller row */}
-                <div style={{display:"flex",alignItems:"center",gap:5,marginBottom:12}}>
-                  <div style={{width:20,height:20,borderRadius:5,background:`linear-gradient(135deg,${C.navy},${C.navy2})`,
-                    display:"flex",alignItems:"center",justifyContent:"center",
-                    fontSize:8,fontWeight:800,color:C.white}}>
-                    {sellerInitial}
-                  </div>
-                  <span style={{fontSize:10,fontWeight:600,color:C.text2}}>{s.seller}</span>
-                  <span style={{fontSize:8,color:C.text3}}>· {s.city}</span>
-                </div>
-
-                {/* Big scheme badge */}
-                <div style={{display:"inline-block",background:s.color,border:`1.5px solid ${s.text}33`,
-                  borderRadius:8,padding:"6px 12px",marginBottom:10}}>
-                  <span style={{fontSize:18,fontWeight:800,color:s.text,letterSpacing:"-.02em"}}>
-                    {s.label}
-                  </span>
-                </div>
-
-                {/* Offer description — the hero text */}
-                <div style={{fontSize:13,fontWeight:700,color:C.navy,lineHeight:1.4,marginBottom:4,
-                  textAlign:"left"}}>
-                  {s.desc}
-                </div>
-                <div style={{fontSize:9,color:C.text3,marginBottom:12,textAlign:"left"}}>
-                  Free goods scheme · Auto-applied at checkout
-                </div>
-
-                {/* Divider */}
-                <div style={{borderTop:`1px solid ${C.border}`,marginBottom:10}}></div>
-
-                {/* Footer row */}
-                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                  <span style={{fontSize:9,color:C.text3}}>{s.products}</span>
-                  <span style={{background:s.color,color:s.text,fontSize:8,fontWeight:800,
-                    padding:"3px 10px",borderRadius:99,letterSpacing:".02em"}}>
-                    {s.expires}
-                  </span>
-                </div>
-              </div>
-            </div>
-          )})}
-        </div>
-      </div>
-
       <div style={{padding:"0 20px"}}>
         {/* Category grid */}
         <div style={{marginBottom:20}}>
@@ -597,7 +610,7 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
                   <th style={{padding:"12px 16px",fontSize:10,fontWeight:700,color:C.text3,
                     textAlign:"left",textTransform:"uppercase",letterSpacing:".05em"}}>Order ID</th>
                   <th style={{padding:"12px 16px",fontSize:10,fontWeight:700,color:C.text3,
-                    textAlign:"left",textTransform:"uppercase",letterSpacing:".05em"}}>Product Details</th>
+                    textAlign:"center",textTransform:"uppercase",letterSpacing:".05em"}}>Product Details</th>
                   <th style={{padding:"12px 16px",fontSize:10,fontWeight:700,color:C.text3,
                     textAlign:"left",textTransform:"uppercase",letterSpacing:".05em"}}>Seller</th>
                   <th style={{padding:"12px 16px",fontSize:10,fontWeight:700,color:C.text3,
@@ -640,7 +653,7 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
                       <td style={{padding:"14px 16px"}}>
                         <div style={{fontSize:12,fontWeight:700,color:C.teal}}>{orderId}</div>
                       </td>
-                      <td style={{padding:"14px 16px"}}>
+                      <td style={{padding:"14px 16px",textAlign:"center"}}>
                         <div>
                           <div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:2}}>{p.name}</div>
                           <div style={{fontSize:11,color:C.text3}}>{p.mol}</div>
@@ -695,118 +708,6 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
             {trending.map(p=>(
               <ProductCard key={p.id} product={p} onClick={()=>onProductSelect(p)} onAddToCart={onAddToCart}/>
             ))}
-          </div>
-        </div>
-
-        {/* Best discounts - Improved grid */}
-        <div style={{marginBottom:20}}>
-          <SectionHead title="Best discounts right now"
-            sub="Highest % off PTR across all categories"
-            action={{label:"View all",fn:()=>{}}}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
-            {deals.map(p=>{
-              const best = p.sellers[0];
-              const savings = ((p.ptr - best.netrate) / p.ptr * 100).toFixed(0);
-              return (
-                <div key={p.id} onClick={()=>onProductSelect(p)} style={{
-                  background:C.white,border:`1.5px solid ${C.border}`,borderRadius:12,
-                  padding:0,cursor:"pointer",overflow:"hidden",transition:"all .25s cubic-bezier(.4,0,.2,1)",
-                  boxShadow:"0 1px 3px rgba(0,0,0,.04)",position:"relative"}}
-                  onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 12px 28px rgba(10,35,66,.1)";
-                    e.currentTarget.style.borderColor=C.teal;e.currentTarget.style.transform="translateY(-4px)"}}
-                  onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,.04)";
-                    e.currentTarget.style.borderColor=C.border;e.currentTarget.style.transform="translateY(0)"}}>
-
-                  {/* Top accent bar */}
-                  <div style={{height:4,background:`linear-gradient(90deg,${C.teal},${C.mint})`}}></div>
-
-                  {/* Floating discount badge */}
-                  <div style={{position:"absolute",top:14,right:14,zIndex:2,
-                    background:`linear-gradient(135deg,${C.green},${C.mint})`,
-                    borderRadius:20,padding:"3px 10px",boxShadow:"0 2px 8px rgba(5,150,105,.3)"}}>
-                    <span style={{fontSize:10,fontWeight:800,color:C.white,letterSpacing:".02em"}}>
-                      −{savings}%
-                    </span>
-                  </div>
-
-                  {/* Product info */}
-                  <div style={{padding:"16px 16px 14px"}}>
-                    {/* Category pill */}
-                    <div style={{marginBottom:10}}>
-                      <span style={{fontSize:8,fontWeight:700,color:C.teal,
-                        background:C.accentL,padding:"2px 8px",borderRadius:4,
-                        textTransform:"uppercase",letterSpacing:".06em"}}>
-                        {p.sub}
-                      </span>
-                    </div>
-
-                    {/* Product name */}
-                    <div style={{fontSize:14,fontWeight:800,color:C.navy,marginBottom:3,
-                      lineHeight:1.3,height:37,overflow:"hidden",display:"-webkit-box",
-                      WebkitLineClamp:2,WebkitBoxOrient:"vertical",textAlign:"left"}}>
-                      {p.name}
-                    </div>
-                    <div style={{fontSize:10,color:C.text3,marginBottom:14,textAlign:"left"}}>
-                      {p.pack} · {p.mfr}
-                    </div>
-
-                    {/* Price block */}
-                    <div style={{background:C.bg,borderRadius:10,padding:"12px 14px",marginBottom:14}}>
-                      <div style={{display:"flex",alignItems:"flex-end",gap:8,marginBottom:4}}>
-                        <span style={{fontSize:22,fontWeight:800,color:C.teal,lineHeight:1}}>
-                          {fmt(best.netrate)}
-                        </span>
-                        <span style={{fontSize:12,color:C.text3,textDecoration:"line-through",marginBottom:2}}>
-                          ₹{p.ptr.toFixed(0)}
-                        </span>
-                      </div>
-                      <div style={{display:"flex",alignItems:"center",gap:4}}>
-                        <span style={{fontSize:9,color:C.dkgreen,fontWeight:700}}>
-                          You save ₹{(p.ptr - best.netrate).toFixed(1)} per strip
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Seller + delivery row */}
-                    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",
-                      marginBottom:14,padding:"0 2px"}}>
-                      <div style={{display:"flex",alignItems:"center",gap:6}}>
-                        <div style={{width:22,height:22,borderRadius:6,background:`linear-gradient(135deg,${C.navy},${C.navy2})`,
-                          display:"flex",alignItems:"center",justifyContent:"center",
-                          fontSize:9,fontWeight:800,color:C.white,boxShadow:"0 1px 4px rgba(10,35,66,.2)"}}>
-                          {best.firm.charAt(0)}
-                        </div>
-                        <span style={{fontSize:10,fontWeight:600,color:C.text2}}>{best.firm}</span>
-                        {SELLER_SCHEMES[best.id]&&(
-                          <span style={{fontSize:8,fontWeight:700,color:SELLER_SCHEMES[best.id].text,
-                            background:SELLER_SCHEMES[best.id].color,padding:"1px 6px",borderRadius:99}}>
-                            {SELLER_SCHEMES[best.id].short}
-                          </span>
-                        )}
-                      </div>
-                      <div style={{display:"flex",alignItems:"center",gap:3}}>
-                        <span style={{fontSize:10}}>🚚</span>
-                        <span style={{fontSize:9,fontWeight:600,color:C.text3}}>{best.del}</span>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <button onClick={e=>{e.stopPropagation();onAddToCart(p,best,1)}}
-                      style={{width:"100%",height:38,borderRadius:8,border:"none",
-                        background:`linear-gradient(135deg,${C.teal} 0%,${C.teal2} 100%)`,
-                        color:C.white,fontSize:12,fontWeight:800,cursor:"pointer",
-                        display:"flex",alignItems:"center",justifyContent:"center",gap:6,
-                        boxShadow:"0 3px 10px rgba(8,145,178,.25)",transition:"all .2s",
-                        letterSpacing:".01em"}}
-                      onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 5px 16px rgba(8,145,178,.4)";e.currentTarget.style.transform="scale(1.01)"}}
-                      onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 3px 10px rgba(8,145,178,.25)";e.currentTarget.style.transform="scale(1)"}}>
-                      <span style={{fontSize:13}}>🛒</span>
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
 
@@ -1460,8 +1361,6 @@ function CartSidebar({cart,setCart,onCheckout,onClose}) {
           {Object.values(bySeller).map(({seller,items},sellerIdx)=>{
             const sellerSubtotal = items.reduce((s,i)=>s+i.seller.netrate*i.qty,0);
             const sellerGST = sellerSubtotal * 0.12;
-            const schemeForSeller = SELLER_SCHEMES[seller.id];
-            const hasScheme = !!schemeForSeller;
             const isCollapsed = collapsed[seller.firm];
 
             return (
@@ -1472,149 +1371,72 @@ function CartSidebar({cart,setCart,onCheckout,onClose}) {
 
                 {/* Seller header */}
                 <div onClick={()=>toggleCollapse(seller.firm)}
-                  style={{padding:"10px 12px",cursor:"pointer",
-                    background:`linear-gradient(to right, ${C.navy} 0%, ${C.navy2} 100%)`,
+                  style={{padding:"6px 12px",cursor:"pointer",
+                    background:C.bg,borderBottom:`1px solid ${C.border}`,
                     display:"flex",alignItems:"center",gap:8}}
-                  onMouseEnter={e=>e.currentTarget.style.opacity=".92"}
-                  onMouseLeave={e=>e.currentTarget.style.opacity="1"}>
-                  <div style={{width:26,height:26,borderRadius:6,
-                    background:"rgba(255,255,255,.15)",border:"1.5px solid rgba(255,255,255,.3)",
-                    display:"flex",alignItems:"center",justifyContent:"center",
-                    fontSize:11,fontWeight:800,color:C.white,flexShrink:0}}>
-                    {seller.firm.charAt(0)}
-                  </div>
+                  onMouseEnter={e=>e.currentTarget.style.background="#E2E8F0"}
+                  onMouseLeave={e=>e.currentTarget.style.background=C.bg}>
                   <div style={{flex:1,minWidth:0}}>
-                    <div style={{fontSize:11,fontWeight:700,color:C.white,
-                      overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
-                      {seller.firm}
-                    </div>
-                    <div style={{fontSize:8,color:"rgba(255,255,255,.55)"}}>
-                      {seller.city} · {items.length} item{items.length>1?"s":""}
-                    </div>
-                  </div>
-                  {hasScheme&&(
-                    <span style={{fontSize:8,fontWeight:800,color:schemeForSeller.text,
-                      background:schemeForSeller.color,padding:"2px 7px",borderRadius:99}}>
-                      🎁 {schemeForSeller.short}
+                    <span style={{fontSize:11,fontWeight:700,color:C.text,
+                      overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",
+                      textAlign:"left",display:"block"}}>
+                      {items.length===1
+                        ? items[0].product.name
+                        : items[0].product.name + " +" + (items.length-1) + " more"}
                     </span>
-                  )}
-                  <span style={{fontSize:12,color:"rgba(255,255,255,.7)",
+                  </div>
+                  <span style={{fontSize:9,color:C.text3,flexShrink:0,fontWeight:400}}>
+                    {seller.firm}
+                  </span>
+                  <span style={{fontSize:11,color:C.text3,flexShrink:0,
                     display:"inline-block",transition:"transform .2s",
                     transform:isCollapsed?"rotate(-90deg)":"rotate(0deg)"}}>▾</span>
                 </div>
 
                 {/* Items */}
                 {!isCollapsed&&(
-                  <div style={{padding:"8px 10px",display:"flex",flexDirection:"column",gap:7}}>
+                  <div style={{padding:"8px 10px",display:"flex",flexDirection:"column",gap:6}}>
                     {items.map(item=>{
                       const itemTotal = item.seller.netrate * item.qty;
-                      const discountPct = ((item.product.ptr - item.seller.netrate)/item.product.ptr*100).toFixed(0);
                       return (
                         <div key={item.product.id}
-                          style={{background:"#F8FAFC",border:`1px solid ${C.border}`,
-                            borderRadius:8,padding:"9px 10px"}}>
-                          {/* Row 1: name + price + remove */}
-                          <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-                            <div style={{flex:1,minWidth:0}}>
-                              <div style={{fontSize:11.5,fontWeight:700,color:C.text,
-                                lineHeight:1.35,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",
-                                textAlign:"left"}}>
-                                {item.product.name}
-                              </div>
-                            </div>
-                            <span style={{fontSize:12,fontWeight:800,color:C.teal,flexShrink:0}}>
-                              {fmt(item.seller.netrate)}
+                          style={{padding:"8px 0",borderBottom:`1px solid ${C.border}`}}>
+                          {/* Row: pack + qty input + prices + remove */}
+                          <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-between",gap:12}}>
+                            <span style={{fontSize:10,color:C.text3,minWidth:70,textAlign:"left"}}>
+                              {item.product.pack}
+                            </span>
+                            <input
+                              type="number"
+                              min={1}
+                              value={item.qty}
+                              onChange={e=>{
+                                const v = parseInt(e.target.value)||0;
+                                if(v<1) removeItem(item.product.id,seller.id);
+                                else updateQty(item.product.id,seller.id,v);
+                              }}
+                              style={{width:42,height:26,border:`1.5px solid ${C.border}`,
+                                borderRadius:4,textAlign:"center",fontSize:12,fontWeight:700,
+                                color:C.navy,background:C.white,outline:"none",
+                                fontFamily:"inherit"}}
+                            />
+                            <span style={{fontSize:12,fontWeight:700,color:C.teal,minWidth:70,textAlign:"right",whiteSpace:"nowrap"}}>
+                              {fmt(item.seller.netrate)} <span style={{fontSize:9,fontWeight:400,color:C.text3}}>/unit</span>
+                            </span>
+                            <span style={{fontSize:13,fontWeight:800,color:C.navy,minWidth:55,textAlign:"right"}}>
+                              {fmt(itemTotal)}
                             </span>
                             <button onClick={e=>{e.stopPropagation();removeItem(item.product.id,seller.id)}}
-                              style={{width:20,height:20,borderRadius:5,border:"1.5px solid #FECACA",
-                                background:"#FEF2F2",cursor:"pointer",color:"#EF4444",
-                                fontSize:13,fontWeight:800,flexShrink:0,padding:0,lineHeight:1,
-                                display:"flex",alignItems:"center",justifyContent:"center",
-                                transition:"all .15s"}}
-                              onMouseEnter={e=>{e.currentTarget.style.background="#EF4444";e.currentTarget.style.color="#fff";e.currentTarget.style.borderColor="#EF4444"}}
-                              onMouseLeave={e=>{e.currentTarget.style.background="#FEF2F2";e.currentTarget.style.color="#EF4444";e.currentTarget.style.borderColor="#FECACA"}}>
+                              style={{width:22,height:22,borderRadius:"50%",border:"none",
+                                background:"transparent",cursor:"pointer",color:"#EF4444",
+                                fontSize:18,fontWeight:400,padding:0,
+                                display:"flex",alignItems:"center",justifyContent:"center"}}>
                               ×
                             </button>
-                          </div>
-                          {/* Row 2: meta + discount + stepper + total */}
-                          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                            <div style={{display:"flex",alignItems:"center",gap:3}}>
-                              <span style={{fontSize:9,color:C.text3}}>{item.product.pack} · Exp {item.seller.exp}</span>
-                              <span style={{fontSize:9,color:C.text3,textDecoration:"line-through"}}>₹{item.product.ptr.toFixed(0)}</span>
-                              <span style={{fontSize:8,fontWeight:700,color:"#fff",
-                                background:"#10B981",padding:"1px 5px",borderRadius:3}}>
-                                −{discountPct}%
-                              </span>
-                            </div>
-                            <div style={{display:"flex",alignItems:"center",gap:6}}>
-                              {/* Qty stepper */}
-                              <div style={{display:"flex",alignItems:"center",
-                                border:`1.5px solid ${C.border}`,borderRadius:6,
-                                overflow:"hidden",background:C.white}}>
-                                <button onClick={()=>updateQty(item.product.id,seller.id,item.qty-1)}
-                                  style={{width:22,height:22,border:"none",background:"transparent",
-                                    cursor:"pointer",fontSize:13,color:C.text2,
-                                    display:"flex",alignItems:"center",justifyContent:"center",
-                                    transition:"all .15s"}}
-                                  onMouseEnter={e=>{e.currentTarget.style.background=C.teal;e.currentTarget.style.color="#fff"}}
-                                  onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.color=C.text2}}>
-                                  −
-                                </button>
-                                <span style={{minWidth:24,textAlign:"center",fontSize:10,fontWeight:800,
-                                  color:C.navy,borderLeft:`1px solid ${C.border}`,
-                                  borderRight:`1px solid ${C.border}`,lineHeight:"22px"}}>
-                                  {item.qty}
-                                </span>
-                                <button onClick={()=>updateQty(item.product.id,seller.id,item.qty+1)}
-                                  style={{width:22,height:22,border:"none",background:"transparent",
-                                    cursor:"pointer",fontSize:13,color:C.text2,
-                                    display:"flex",alignItems:"center",justifyContent:"center",
-                                    transition:"all .15s"}}
-                                  onMouseEnter={e=>{e.currentTarget.style.background=C.teal;e.currentTarget.style.color="#fff"}}
-                                  onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.color=C.text2}}>
-                                  +
-                                </button>
-                              </div>
-                              <span style={{fontSize:12,fontWeight:800,color:C.navy,minWidth:46,textAlign:"right"}}>
-                                {fmt(itemTotal)}
-                              </span>
-                            </div>
                           </div>
                         </div>
                       );
                     })}
-
-                    {/* Scheme badge */}
-                    {hasScheme&&(
-                      <div style={{display:"flex",alignItems:"center",gap:6,padding:"6px 8px",
-                        background:schemeForSeller.color,borderRadius:6,
-                        border:`1px dashed ${schemeForSeller.text}66`}}>
-                        <span style={{fontSize:12}}>🎁</span>
-                        <div style={{flex:1}}>
-                          <div style={{fontSize:10,fontWeight:700,color:schemeForSeller.text}}>
-                            {schemeForSeller.label} applied
-                          </div>
-                          <div style={{fontSize:8.5,color:schemeForSeller.text,opacity:.75}}>{schemeForSeller.desc}</div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Seller subtotal */}
-                    <div style={{borderTop:`1px dashed ${C.border}`,paddingTop:7,
-                      display:"flex",flexDirection:"column",gap:3}}>
-                      {[["Subtotal",fmt(sellerSubtotal)],["GST 12%",fmt(sellerGST)]].map(([l,v])=>(
-                        <div key={l} style={{display:"flex",justifyContent:"space-between",
-                          fontSize:10,color:C.text3}}>
-                          <span>{l}</span>
-                          <span style={{fontWeight:600,color:C.text2}}>{v}</span>
-                        </div>
-                      ))}
-                      <div style={{display:"flex",justifyContent:"space-between",
-                        fontSize:11,fontWeight:800,color:C.navy,paddingTop:2}}>
-                        <span>Seller Total</span>
-                        <span style={{color:C.teal}}>{fmt(sellerSubtotal+sellerGST)}</span>
-                      </div>
-                    </div>
                   </div>
                 )}
               </div>
@@ -1628,38 +1450,33 @@ function CartSidebar({cart,setCart,onCheckout,onClose}) {
         <div style={{borderTop:`1.5px solid ${C.border}`,padding:"12px 14px 14px",
           background:C.white,flexShrink:0,
           boxShadow:"0 -4px 16px rgba(0,0,0,.06)"}}>
-          {/* Totals breakdown */}
-          <div style={{marginBottom:10}}>
-            {[
-              ["Subtotal (Net)",fmt(subtotal),"inherit"],
-              ["GST (12%)","+"+fmt(gst),"inherit"],
-              ["Total Savings","−"+fmt(totalSavings),C.dkgreen],
-            ].map(([l,v,clr])=>(
-              <div key={l} style={{display:"flex",justifyContent:"space-between",
-                fontSize:10.5,color:C.text2,marginBottom:4}}>
-                <span>{l}</span>
-                <span style={{fontWeight:600,color:clr}}>{v}</span>
-              </div>
-            ))}
+          {/* Totals */}
+          <div style={{marginBottom:12}}>
             <div style={{display:"flex",justifyContent:"space-between",
-              fontSize:15,fontWeight:800,paddingTop:8,marginTop:4,
-              borderTop:`1.5px solid ${C.border}`}}>
-              <span style={{color:C.text}}>Grand Total</span>
+              fontSize:12,color:C.text2,marginBottom:6}}>
+              <span>Subtotal</span>
+              <span style={{fontWeight:600,color:C.text}}>{fmt(subtotal)}</span>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between",
+              fontSize:12,color:C.text2,marginBottom:8}}>
+              <span>GST (~12%)</span>
+              <span style={{fontWeight:600,color:C.text}}>{fmt(gst)}</span>
+            </div>
+            <div style={{display:"flex",justifyContent:"space-between",
+              fontSize:15,fontWeight:800}}>
+              <span style={{color:C.text}}>Total</span>
               <span style={{color:C.teal}}>{fmt(subtotal+gst)}</span>
             </div>
           </div>
           <button onClick={onCheckout}
-            style={{width:"100%",height:42,background:`linear-gradient(135deg,${C.teal} 0%,${C.teal2} 100%)`,
+            style={{width:"100%",height:46,background:"#16558B",
               border:"none",borderRadius:8,cursor:"pointer",
-              fontSize:13,fontWeight:800,color:"#fff",letterSpacing:".01em",
-              boxShadow:"0 4px 14px rgba(8,145,178,.35)",transition:"all .2s",
-              display:"flex",alignItems:"center",justifyContent:"center",gap:6,marginBottom:8}}
-            onMouseEnter={e=>e.currentTarget.style.boxShadow="0 6px 20px rgba(8,145,178,.5)"}
-            onMouseLeave={e=>e.currentTarget.style.boxShadow="0 4px 14px rgba(8,145,178,.35)"}>
-            Proceed to Pay  →
+              fontSize:14,fontWeight:700,color:"#fff",
+              display:"flex",alignItems:"center",justifyContent:"center",gap:6,marginBottom:8}}>
+            Place order →
           </button>
-          <div style={{fontSize:9.5,color:C.text3,textAlign:"center"}}>
-            {sellerCount} seller order{sellerCount>1?"s":""} · Separate GST invoices per seller
+          <div style={{fontSize:10,color:C.text3,textAlign:"center"}}>
+            {sellerCount} seller order{sellerCount>1?"s":""} · GST invoice per seller
           </div>
         </div>
       )}
@@ -1683,9 +1500,14 @@ function OrderConfirmed({cart,onDone,onTrackOrders}) {
   },{});
 
   const paymentOptions = [
-    {id:"credit",   label:"Fundly Credit",        desc:"Use your available credit limit",  icon:"💳"},
+    {id:"credit",   label:"Fundly Credit",        desc:"Use your available credit limit",  icon:"💳", limit:150000},
     {id:"dispatch", label:"Pay Before Dispatch",   desc:"Pay once seller packs the order",  icon:"📦"},
     {id:"delivery", label:"Pay on Delivery",       desc:"Cash / UPI at the time of delivery",icon:"🚚"},
+    {id:"cash",     label:"Cash Payment",          desc:"Pay instantly via Netbanking / UPI / Card",icon:"💵",
+      sub:[
+        {id:"netbanking", label:"Netbanking", icon:"🏦"},
+        {id:"upi",        label:"UPI",        icon:"📱"},
+      ]},
   ];
 
   /* ── POST-CONFIRM SUCCESS SCREEN ── */
@@ -1725,8 +1547,16 @@ function OrderConfirmed({cart,onDone,onTrackOrders}) {
           padding:"10px 16px",marginBottom:20,display:"flex",justifyContent:"space-between",
           alignItems:"center"}}>
           <div style={{fontSize:11,color:C.text3}}>
-            {paymentOptions.find(p=>p.id===paymentMethod)?.icon}{" "}
-            {paymentOptions.find(p=>p.id===paymentMethod)?.label}
+            {(()=>{
+              const main = paymentOptions.find(p=>p.id===(paymentMethod||"").split("-")[0]);
+              const subId = (paymentMethod||"").split("-")[1];
+              const sub = main?.sub?.find(s=>s.id===subId);
+              return (
+                <span>
+                  {main?.icon}{" "}{main?.label}{sub?" · "+sub.label:""}
+                </span>
+              );
+            })()}
           </div>
           <div style={{fontSize:16,fontWeight:800,color:C.teal}}>{fmt(total+gst)}</div>
         </div>
@@ -1762,10 +1592,10 @@ function OrderConfirmed({cart,onDone,onTrackOrders}) {
             {Object.values(bySeller).map(({seller,items})=>(
               <div key={seller.firm} style={{background:C.white,border:`1.5px solid ${C.border}`,
                 borderRadius:8,marginBottom:10,overflow:"hidden"}}>
-                <div style={{background:C.navy,padding:"8px 12px",display:"flex",alignItems:"center",gap:8}}>
+                <div style={{background:"#16558B",padding:"8px 12px",display:"flex",alignItems:"center",gap:8}}>
                   <div style={{width:28,height:28,borderRadius:6,background:C.white,
                     display:"flex",alignItems:"center",justifyContent:"center",
-                    fontSize:11,fontWeight:800,color:C.navy}}>
+                    fontSize:11,fontWeight:800,color:"#16558B"}}>
                     {seller.firm.charAt(0)}
                   </div>
                   <div style={{flex:1}}>
@@ -1820,35 +1650,101 @@ function OrderConfirmed({cart,onDone,onTrackOrders}) {
               </div>
             </div>
 
+            {/* Selected payment preview */}
+            {paymentMethod&&(
+              <div style={{background:"#F0FDFF",border:`1.5px solid ${C.teal}`,borderRadius:8,
+                padding:"8px 12px",marginBottom:10,display:"flex",alignItems:"center",gap:8}}>
+                {(()=>{
+                  const main = paymentOptions.find(p=>p.id===(paymentMethod||"").split("-")[0]);
+                  const subId = (paymentMethod||"").split("-")[1];
+                  const sub = main?.sub?.find(s=>s.id===subId);
+                  return (
+                    <>
+                      <span style={{fontSize:16}}>{main?.icon}</span>
+                      <div style={{flex:1}}>
+                        <div style={{fontSize:11,fontWeight:700,color:C.text}}>
+                          {main?.label}{sub?" · "+sub.label:""}
+                        </div>
+                        <div style={{fontSize:9,color:C.text3}}>Selected payment method</div>
+                      </div>
+                      <span style={{fontSize:14,color:C.teal}}>✓</span>
+                    </>
+                  );
+                })()}
+              </div>
+            )}
+
             {/* Payment method */}
             <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:8,
               padding:"12px",marginBottom:10}}>
               <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:8}}>
                 Select Payment Method
               </div>
-              {paymentOptions.map(opt=>(
-                <div key={opt.id} onClick={()=>setPaymentMethod(opt.id)}
-                  style={{padding:"9px 10px",border:`1.5px solid ${paymentMethod===opt.id?C.teal:C.border}`,
-                    borderRadius:6,marginBottom:6,cursor:"pointer",
-                    background:paymentMethod===opt.id?"#F0FDFF":C.white,transition:"all .15s"}}
-                  onMouseEnter={e=>{if(paymentMethod!==opt.id)e.currentTarget.style.borderColor=C.text3}}
-                  onMouseLeave={e=>{if(paymentMethod!==opt.id)e.currentTarget.style.borderColor=C.border}}>
-                  <div style={{display:"flex",alignItems:"center",gap:8}}>
-                    <span style={{fontSize:18}}>{opt.icon}</span>
-                    <div style={{flex:1}}>
-                      <div style={{fontSize:11,fontWeight:700,color:C.text}}>{opt.label}</div>
-                      <div style={{fontSize:9,color:C.text3}}>{opt.desc}</div>
-                    </div>
-                    <div style={{width:16,height:16,borderRadius:8,
-                      border:`2px solid ${paymentMethod===opt.id?C.teal:C.border}`,
-                      background:paymentMethod===opt.id?C.teal:C.white,
-                      display:"flex",alignItems:"center",justifyContent:"center",
-                      fontSize:9,color:C.white,transition:"all .15s",flexShrink:0}}>
-                      {paymentMethod===opt.id?"✓":""}
+              {paymentOptions.map(opt=>{
+                const isActive = paymentMethod===opt.id;
+                const isParentActive = paymentMethod?.startsWith?.(opt.id+"-");
+                const showSub = isActive || isParentActive;
+                return (
+                <div key={opt.id}>
+                  <div onClick={()=>setPaymentMethod(opt.id)}
+                    style={{padding:"9px 10px",border:`1.5px solid ${isActive||isParentActive?C.teal:C.border}`,
+                      borderRadius:6,marginBottom:showSub&&opt.sub?0:6,cursor:"pointer",
+                      background:isActive||isParentActive?"#F0FDFF":C.white,transition:"all .15s"}}
+                    onMouseEnter={e=>{if(!isActive&&!isParentActive)e.currentTarget.style.borderColor=C.text3}}
+                    onMouseLeave={e=>{if(!isActive&&!isParentActive)e.currentTarget.style.borderColor=C.border}}>
+                    <div style={{display:"flex",alignItems:"center",gap:8}}>
+                      <span style={{fontSize:18}}>{opt.icon}</span>
+                      <div style={{flex:1}}>
+                        <div style={{fontSize:11,fontWeight:700,color:C.text}}>{opt.label}</div>
+                        <div style={{fontSize:9,color:C.text3}}>{opt.desc}</div>
+                        {opt.limit&&(
+                          <div style={{marginTop:4}}>
+                            <div style={{display:"flex",justifyContent:"space-between",fontSize:8,color:C.text3,marginBottom:2}}>
+                              <span>Available limit</span>
+                              <span style={{fontWeight:700,color:C.teal}}>{fmt(opt.limit)}</span>
+                            </div>
+                            <div style={{height:4,background:C.border,borderRadius:2,overflow:"hidden"}}>
+                              <div style={{height:"100%",width:"35%",background:`linear-gradient(to right,${C.teal},${C.teal2})`,borderRadius:2}}></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div style={{width:16,height:16,borderRadius:8,
+                        border:`2px solid ${isActive||isParentActive?C.teal:C.border}`,
+                        background:isActive||isParentActive?C.teal:C.white,
+                        display:"flex",alignItems:"center",justifyContent:"center",
+                        fontSize:9,color:C.white,transition:"all .15s",flexShrink:0}}>
+                        {isActive||isParentActive?"✓":""}
+                      </div>
                     </div>
                   </div>
+                  {/* Sub options */}
+                  {showSub&&opt.sub&&(
+                    <div style={{padding:"0 10px 8px 38px",border:`1.5px solid ${C.teal}`,
+                      borderTop:"none",borderRadius:"0 0 6px 6px",marginBottom:6,
+                      background:"#F0FDFF"}}>
+                      {opt.sub.map(sub=>(
+                        <div key={sub.id} onClick={()=>setPaymentMethod(opt.id+"-"+sub.id)}
+                          style={{padding:"7px 8px",marginTop:4,cursor:"pointer",
+                            border:`1.5px solid ${paymentMethod===opt.id+"-"+sub.id?C.teal:C.border2}`,
+                            borderRadius:5,background:C.white,
+                            display:"flex",alignItems:"center",gap:6}}>
+                          <span style={{fontSize:14}}>{sub.icon}</span>
+                          <span style={{fontSize:11,fontWeight:600,color:C.text,flex:1,textAlign:"left"}}>{sub.label}</span>
+                          <div style={{width:14,height:14,borderRadius:7,
+                            border:`2px solid ${paymentMethod===opt.id+"-"+sub.id?C.teal:C.border}`,
+                            background:paymentMethod===opt.id+"-"+sub.id?C.teal:C.white,
+                            display:"flex",alignItems:"center",justifyContent:"center",
+                            fontSize:7,color:C.white}}>
+                            {paymentMethod===opt.id+"-"+sub.id?"✓":""}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Confirm button */}
@@ -1881,10 +1777,11 @@ function OrderDetails({orderId,onBack}) {
     date:"10 Jun 2026, 2:45 PM",
     status:"Delivered",
     deliveredDate:"12 Jun 2026, 11:30 AM",
+    payment:"Fundly Credit",
     items:[
-      {name:"Glycomet 500mg",mol:"Metformin HCl 500mg",pack:"Strip of 10",qty:50,rate:28.51,seller:"Joth Pharma",city:"Mumbai"},
-      {name:"Crocin 500mg",mol:"Paracetamol 500mg",pack:"Strip of 15",qty:100,rate:17.11,seller:"Joth Pharma",city:"Mumbai"},
-      {name:"Augmentin 625mg",mol:"Amoxicillin 500mg + Clavulanic Acid 125mg",pack:"Strip of 10",qty:20,rate:81.42,seller:"MedStock",city:"Pune"}
+      {name:"Glycomet 500mg",mol:"Metformin HCl 500mg",pack:"Strip of 10",qty:50,rate:28.51,seller:"Joth Pharma",city:"Mumbai",hsn:"30049099",gst:12},
+      {name:"Crocin 500mg",mol:"Paracetamol 500mg",pack:"Strip of 15",qty:100,rate:17.11,seller:"Joth Pharma",city:"Mumbai",hsn:"30049099",gst:12},
+      {name:"Augmentin 625mg",mol:"Amoxicillin 500mg + Clavulanic Acid 125mg",pack:"Strip of 10",qty:20,rate:81.42,seller:"MedStock",city:"Pune",hsn:"30049099",gst:12}
     ],
     subtotal:3795.50,
     gst:455.46,
@@ -1898,7 +1795,15 @@ function OrderDetails({orderId,onBack}) {
       {date:"10 Jun 2026, 2:45 PM",status:"Confirmed",desc:"Order confirmed by sellers"}
     ]
   };
-  
+
+  const statusColor = {
+    Delivered:{bg:C.lgreen,color:C.dkgreen},
+    "Out for Delivery":{bg:C.lblue,color:C.blue},
+    "In Transit":{bg:C.lblue,color:C.blue},
+    Packed:{bg:C.lamber,color:"#92400E"},
+    Confirmed:{bg:"#F3E8FF",color:"#6B21A8"}
+  };
+
   return (
     <div style={{flex:1,overflowY:"auto",padding:"16px 20px",background:C.bg}}>
       <button onClick={onBack} style={{background:"none",border:"none",cursor:"pointer",
@@ -1923,38 +1828,75 @@ function OrderDetails({orderId,onBack}) {
                 {order.status}
               </div>
             </div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12,
+            <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,
               padding:"12px",background:C.bg,borderRadius:8}}>
-              <div>
-                <div style={{fontSize:10,color:C.text3,marginBottom:2}}>Items</div>
-                <div style={{fontSize:14,fontWeight:700,color:C.text}}>{order.items.length}</div>
-              </div>
-              <div>
-                <div style={{fontSize:10,color:C.text3,marginBottom:2}}>Sellers</div>
-                <div style={{fontSize:14,fontWeight:700,color:C.text}}>2</div>
-              </div>
-              <div>
-                <div style={{fontSize:10,color:C.text3,marginBottom:2}}>Total Amount</div>
-                <div style={{fontSize:14,fontWeight:700,color:C.teal}}>{fmt(order.total)}</div>
-              </div>
+              {[
+                ["Items",order.items.length.toString()],
+                ["Sellers","2"],
+                ["Payment",order.payment],
+                ["Total",fmt(order.total)],
+              ].map(([l,v],i)=>(
+                <div key={i} style={{textAlign:"left"}}>
+                  <div style={{fontSize:9,color:C.text3,marginBottom:3,fontWeight:600}}>{l}</div>
+                  <div style={{fontSize:13,fontWeight:700,color:i===3?C.teal:C.text}}>{v}</div>
+                </div>
+              ))}
             </div>
           </div>
           
           {/* Order items with invoices */}
           <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:10,
             padding:"14px 16px",marginBottom:12}}>
-            <div style={{fontSize:13,fontWeight:700,color:C.navy,marginBottom:10}}>Order Items & Invoices</div>
+            <div style={{fontSize:13,fontWeight:800,color:C.navy,marginBottom:10}}>Line Items</div>
             
-            {/* Group by seller */}
+            {/* Line Items table */}
+            <table style={{width:"100%",borderCollapse:"collapse",marginBottom:12}}>
+              <thead>
+                <tr style={{background:C.bg,borderBottom:`1px solid ${C.border}`}}>
+                  {["#","Product","Pack","Qty","Rate","GST%","Amount"].map((h,idx)=>(
+                    <th key={h} style={{padding:"8px 10px",fontSize:9,fontWeight:700,color:C.text3,
+                      textAlign:idx===0||idx===3?"center":"left",textTransform:"uppercase",
+                      letterSpacing:".04em",whiteSpace:"nowrap"}}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {order.items.map((item,idx)=>{
+                  const amt = item.rate * item.qty;
+                  return (
+                    <tr key={idx} style={{borderBottom:`1px solid ${C.border}`,background:idx%2===0?C.white:C.bg}}>
+                      <td style={{padding:"8px 10px",textAlign:"center"}}><span style={{fontSize:10,color:C.text3}}>{idx+1}</span></td>
+                      <td style={{padding:"8px 10px"}}>
+                        <div style={{fontSize:11,fontWeight:700,color:C.text,textAlign:"left"}}>{item.name}</div>
+                        <div style={{fontSize:9,color:C.text3,textAlign:"left"}}>{item.mol}</div>
+                      </td>
+                      <td style={{padding:"8px 10px"}}><span style={{fontSize:10,color:C.text2,textAlign:"left",display:"block"}}>{item.pack}</span></td>
+                      <td style={{padding:"8px 10px",textAlign:"center"}}><span style={{fontSize:11,fontWeight:700,color:C.text}}>{item.qty}</span></td>
+                      <td style={{padding:"8px 10px"}}><span style={{fontSize:10,color:C.text2,textAlign:"left",display:"block"}}>{fmt(item.rate)}</span></td>
+                      <td style={{padding:"8px 10px",textAlign:"center"}}><span style={{fontSize:10,color:C.text2}}>{item.gst}%</span></td>
+                      <td style={{padding:"8px 10px"}}>
+                        <span style={{fontSize:11,fontWeight:800,color:C.navy,textAlign:"right",display:"block"}}>{fmt(amt)}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+
+            {/* Seller invoices */}
             {[
-              {seller:"Joth Pharma",city:"Mumbai",invoice:"INV-2026-1234",items:order.items.slice(0,2)},
-              {seller:"MedStock",city:"Pune",invoice:"INV-2026-1235",items:order.items.slice(2,3)}
-            ].map((group,gi)=>(
+              {seller:"Joth Pharma",city:"Mumbai",invoice:"INV-2026-1234",gstin:"27AABCU9603R1ZX",items:order.items.slice(0,2)},
+              {seller:"MedStock",city:"Pune",invoice:"INV-2026-1235",gstin:"27AABCU9603R1ZY",items:order.items.slice(2,3)}
+            ].map((group,gi)=>{
+              const sellerSub = group.items.reduce((s,it)=>s+it.rate*it.qty,0);
+              const sellerGST = sellerSub*0.12;
+              return (
               <div key={gi} style={{marginBottom:gi<1?12:0,border:`1px solid ${C.border}`,borderRadius:8,overflow:"hidden"}}>
                 {/* Seller header */}
-                <div style={{background:C.navy,padding:"8px 12px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                <div style={{background:"#16558B",padding:"8px 12px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
                   <div style={{flex:1}}>
-                    <div style={{fontSize:11,fontWeight:700,color:C.white,marginBottom:2}}>{group.seller}, {group.city}</div>
+                    <div style={{fontSize:11,fontWeight:700,color:C.white,marginBottom:2}}>{group.seller}</div>
+                    <div style={{fontSize:8,color:"rgba(255,255,255,.6)"}}>{group.city} · {group.gstin}</div>
                     <div style={{display:"flex",alignItems:"center",gap:8}}>
                       <div style={{background:"rgba(255,255,255,.15)",padding:"3px 8px",borderRadius:4}}>
                         <span style={{fontSize:8,color:"rgba(255,255,255,.6)",marginRight:4}}>Invoice:</span>
@@ -1967,34 +1909,66 @@ function OrderDetails({orderId,onBack}) {
                   </div>
                 </div>
                 
-                {/* Items */}
-                {group.items.map((item,i)=>(
-                  <div key={i} style={{padding:"10px 12px",background:i%2===0?C.white:C.bg,
-                    borderBottom:i<group.items.length-1?`1px solid ${C.border}`:"none"}}>
-                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"start"}}>
-                      <div style={{flex:1}}>
-                        <div style={{fontSize:12,fontWeight:700,color:C.text,marginBottom:1}}>{item.name}</div>
-                        <div style={{fontSize:10,color:C.text3,marginBottom:3}}>{item.mol}</div>
-                        <div style={{fontSize:9,color:C.text2}}>{item.pack} • Qty: {item.qty}</div>
-                      </div>
-                      <div style={{textAlign:"right"}}>
-                        <div style={{fontSize:13,fontWeight:800,color:C.navy}}>{fmt(item.rate*item.qty)}</div>
-                        <div style={{fontSize:9,color:C.text3}}>{fmt(item.rate)}/unit</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {/* Items table */}
+                <table style={{width:"100%",borderCollapse:"collapse"}}>
+                  <thead>
+                    <tr style={{background:C.bg,borderBottom:`1px solid ${C.border}`}}>
+                      {["Product","HSN","Pack","Qty","Rate","Amount"].map((h,idx)=>(
+                        <th key={h} style={{padding:"6px 10px",fontSize:8,fontWeight:700,color:C.text3,
+                          textAlign:idx===3?"center":"left",textTransform:"uppercase",letterSpacing:".04em"}}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {group.items.map((item,i)=>{
+                      const lineTotal = item.rate * item.qty;
+                      return (
+                        <tr key={i} style={{borderBottom:i<group.items.length-1?`1px solid ${C.border}`:"none",
+                          background:i%2===0?C.white:C.bg}}>
+                          <td style={{padding:"8px 10px"}}>
+                            <div style={{fontSize:11,fontWeight:700,color:C.text,textAlign:"left"}}>{item.name}</div>
+                            <div style={{fontSize:9,color:C.text3,textAlign:"left"}}>{item.mol}</div>
+                          </td>
+                          <td style={{padding:"8px 10px"}}>
+                            <span style={{fontSize:10,color:C.text2,textAlign:"left",display:"block"}}>{item.hsn}</span>
+                          </td>
+                          <td style={{padding:"8px 10px"}}>
+                            <span style={{fontSize:10,color:C.text2,textAlign:"left",display:"block"}}>{item.pack}</span>
+                          </td>
+                          <td style={{padding:"8px 10px",textAlign:"center"}}>
+                            <span style={{fontSize:11,fontWeight:700,color:C.text}}>{item.qty}</span>
+                          </td>
+                          <td style={{padding:"8px 10px"}}>
+                            <span style={{fontSize:10,color:C.text2,textAlign:"left",display:"block"}}>{fmt(item.rate)}</span>
+                          </td>
+                          <td style={{padding:"8px 10px"}}>
+                            <span style={{fontSize:11,fontWeight:800,color:C.navy,textAlign:"right",display:"block"}}>{fmt(lineTotal)}</span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
                 
-                {/* Seller subtotal */}
-                <div style={{background:C.bg,padding:"8px 12px",borderTop:`1px solid ${C.border}`,
-                  display:"flex",justifyContent:"space-between"}}>
-                  <span style={{fontSize:10,color:C.text2}}>Subtotal (incl. GST)</span>
-                  <span style={{fontSize:11,fontWeight:700,color:C.navy}}>
-                    {fmt(group.items.reduce((s,item)=>s+item.rate*item.qty,0)*1.12)}
-                  </span>
+                {/* Seller totals */}
+                <div style={{background:C.bg,padding:"8px 12px",borderTop:`1px dashed ${C.border}`,
+                  display:"flex",justifyContent:"flex-end",gap:16}}>
+                  <div style={{textAlign:"right"}}>
+                    <div style={{fontSize:9,color:C.text3}}>Subtotal</div>
+                    <div style={{fontSize:11,fontWeight:700,color:C.text}}>{fmt(sellerSub)}</div>
+                  </div>
+                  <div style={{textAlign:"right"}}>
+                    <div style={{fontSize:9,color:C.text3}}>GST (12%)</div>
+                    <div style={{fontSize:11,fontWeight:700,color:C.text}}>{fmt(sellerGST)}</div>
+                  </div>
+                  <div style={{textAlign:"right",minWidth:80}}>
+                    <div style={{fontSize:9,color:C.text3}}>Total</div>
+                    <div style={{fontSize:12,fontWeight:800,color:C.teal}}>{fmt(sellerSub+sellerGST)}</div>
+                  </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
           
           {/* Delivery address */}
@@ -2009,43 +1983,52 @@ function OrderDetails({orderId,onBack}) {
         <div>
           {/* Order summary */}
           <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:10,
-            padding:"12px 14px",marginBottom:12}}>
-            <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:10}}>Order Summary</div>
-            <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,fontSize:11}}>
-              <span style={{color:C.text3}}>Subtotal</span>
-              <span style={{fontWeight:600,color:C.text}}>{fmt(order.subtotal)}</span>
-            </div>
-            <div style={{display:"flex",justifyContent:"space-between",marginBottom:10,fontSize:11,
-              paddingBottom:10,borderBottom:`1px solid ${C.border}`}}>
-              <span style={{color:C.text3}}>GST (12%)</span>
-              <span style={{fontWeight:600,color:C.text}}>{fmt(order.gst)}</span>
-            </div>
-            <div style={{display:"flex",justifyContent:"space-between",fontSize:14}}>
-              <span style={{fontWeight:700,color:C.text}}>Total</span>
-              <span style={{fontWeight:800,color:C.teal}}>{fmt(order.total)}</span>
+            padding:"14px",marginBottom:12}}>
+            <div style={{fontSize:13,fontWeight:800,color:C.navy,marginBottom:12}}>Order Summary</div>
+            {[
+              ["Subtotal (Net)",fmt(order.subtotal)],
+              ["GST (12%)","+"+fmt(order.gst)],
+              ["Delivery Fee","₹0.00"],
+              ["Discount Applied","−₹0.00"],
+            ].map(([l,v],i)=>(
+              <div key={l} style={{display:"flex",justifyContent:"space-between",
+                fontSize:11,color:C.text2,marginBottom:8,paddingBottom:8,
+                borderBottom:i<3?`1px dashed ${C.border}`:"none"}}>
+                <span>{l}</span>
+                <span style={{fontWeight:600}}>{v}</span>
+              </div>
+            ))}
+            <div style={{display:"flex",justifyContent:"space-between",paddingTop:4}}>
+              <span style={{fontSize:14,fontWeight:800,color:C.text}}>Grand Total</span>
+              <span style={{fontSize:16,fontWeight:800,color:C.teal}}>{fmt(order.total)}</span>
             </div>
           </div>
           
           {/* Tracking */}
           <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:10,
             padding:"12px 14px"}}>
-            <div style={{fontSize:12,fontWeight:700,color:C.navy,marginBottom:10}}>Order Tracking</div>
+            <div style={{fontSize:13,fontWeight:800,color:C.navy,marginBottom:14}}>Order Tracking</div>
             <div style={{position:"relative"}}>
               {order.trackingUpdates.map((update,i)=>(
                 <div key={i} style={{display:"flex",gap:12,marginBottom:i<order.trackingUpdates.length-1?16:0}}>
-                  <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-                    <div style={{width:20,height:20,borderRadius:"50%",
-                      background:i===0?C.green:C.bg,border:`2px solid ${i===0?C.green:C.border}`,
-                      display:"flex",alignItems:"center",justifyContent:"center"}}>
-                      {i===0&&<div style={{width:8,height:8,borderRadius:"50%",background:C.white}}/>}
-                    </div>
+                  <div style={{display:"flex",flexDirection:"column",alignItems:"center",paddingTop:2}}>
+                    <div style={{width:10,height:10,borderRadius:"50%",
+                      background:i===0?C.green:C.border,
+                      border:`2px solid ${i===0?C.green:C.border}`,
+                      boxShadow:i===0?`0 0 0 3px ${C.lgreen}`:"none"}}></div>
                     {i<order.trackingUpdates.length-1&&(
-                      <div style={{width:2,flex:1,background:C.border,minHeight:30}}/>
+                      <div style={{width:2,flex:1,background:i===0?C.green:C.border,minHeight:24,marginTop:4}}></div>
                     )}
                   </div>
                   <div style={{flex:1,paddingBottom:i<order.trackingUpdates.length-1?0:0}}>
-                    <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:2}}>{update.status}</div>
-                    <div style={{fontSize:10,color:C.text3,marginBottom:2}}>{update.desc}</div>
+                    <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:2}}>
+                      <span style={{fontSize:11,fontWeight:700,color:C.text}}>{update.status}</span>
+                      {i===0&&(
+                        <span style={{fontSize:8,fontWeight:800,color:C.dkgreen,background:C.lgreen,
+                          padding:"1px 5px",borderRadius:3}}>CURRENT</span>
+                      )}
+                    </div>
+                    <div style={{fontSize:10,color:C.text3,marginBottom:1}}>{update.desc}</div>
                     <div style={{fontSize:9,color:C.text3}}>{update.date}</div>
                   </div>
                 </div>
@@ -2096,8 +2079,8 @@ function MyOrders({onProductSelect,onViewOrder}) {
             {id:"Acknowledged",label:"Pending",count:orders.filter(o=>o.status==="Acknowledged").length},
           ].map(tab=>(
             <button key={tab.id} onClick={()=>setActiveTab(tab.id)}
-              style={{padding:"5px 12px",background:activeTab===tab.id?C.navy:C.white,
-                border:`1px solid ${activeTab===tab.id?C.navy:C.border}`,cursor:"pointer",
+              style={{padding:"5px 12px",background:activeTab===tab.id?"#16558B":C.white,
+                border:`1px solid ${activeTab===tab.id?"#16558B":C.border}`,cursor:"pointer",
                 fontSize:11,fontWeight:600,color:activeTab===tab.id?C.white:C.text2,
                 borderRadius:6,transition:"all .15s"}}>
               {tab.label} ({tab.count})
@@ -2394,12 +2377,12 @@ export default function BuyerApp() {
               letterSpacing:".05em",marginBottom:10}}>Browse</div>
             {[
               {id:"home",     label:"Home",       icon:"🏠", screen:"home"},
-              {id:"deals",    label:"Best Deals",  icon:"💰", screen:"deals"},
-              {id:"trending", label:"Trending",    icon:"📈", screen:"trending"},
-              {id:"orders",   label:"My Orders",   icon:"📦", screen:"orders"},
-              {id:"invoices", label:"Invoices",    icon:"📄", screen:"invoices"},
-              {id:"favorites",label:"Favorites",   icon:"⭐", screen:"favorites"},
-            ].map(item=>(
+              {id:"deals",    label:"Best Deals",  icon:"💰", screen:"deals",    _hidden:true},
+              {id:"trending", label:"Trending",    icon:"📈", screen:"trending", _hidden:true},
+              {id:"orders",   label:"My Orders",   icon:"📦", screen:"orders",   _hidden:true},
+              {id:"invoices", label:"Invoices",    icon:"📄", screen:"invoices", _hidden:true},
+              {id:"favorites",label:"Favorites",   icon:"⭐", screen:"favorites",_hidden:true},
+            ].filter(item=>!item._hidden).map(item=>(
               <div key={item.id} onClick={()=>{
                 if(item.screen==="home"){setScreen("home");setSearchQ("");}
                 else if(item.screen==="deals") handleSearch("deal");
