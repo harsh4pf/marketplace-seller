@@ -503,35 +503,66 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
       <div style={{padding:"0 20px",marginBottom:20}}>
         <SectionHead title="Active Seller Schemes" sub="Limited period · Auto-applied on eligible orders"
           action={{label:"View all",fn:()=>{}}}/>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10}}>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
           {[
-            {seller:"Joth Pharma", ...SELLER_SCHEMES.s1, products:"All products",expires:"Ends 15 Jun"},
-            {seller:"MedStock",    ...SELLER_SCHEMES.s2, products:"All products",expires:"Ends 18 Jun"},
-            {seller:"PharmaDepot", ...SELLER_SCHEMES.s3, products:"All products",expires:"Ends 20 Jun"},
-            {seller:"Apollo Dist", ...SELLER_SCHEMES.s5, products:"Orders ≥50 units",expires:"Ends 25 Jun"},
-          ].map((s,i)=>(
-            <div key={i} style={{background:s.color,borderRadius:8,padding:"12px 14px",
-              border:`1.5px solid ${s.text}22`,position:"relative",overflow:"hidden"}}>
-              <div style={{position:"absolute",right:-10,top:-10,width:60,height:60,
-                borderRadius:"50%",background:`${s.text}10`}}/>
-              <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
-                <div style={{width:32,height:32,borderRadius:6,background:`${s.text}18`,
-                  display:"flex",alignItems:"center",justifyContent:"center",
-                  fontSize:16,flexShrink:0}}>🎁</div>
-                <div>
-                  <div style={{fontSize:13,fontWeight:800,color:s.text,lineHeight:1}}>{s.short}</div>
-                  <div style={{fontSize:9,color:s.text,opacity:.8,marginTop:1}}>Free goods scheme</div>
+            {seller:"Joth Pharma", city:"Mumbai",  ...SELLER_SCHEMES.s1, products:"All products",expires:"Ends 15 Jun"},
+            {seller:"MedStock",    city:"Pune",    ...SELLER_SCHEMES.s2, products:"All products",expires:"Ends 18 Jun"},
+            {seller:"PharmaDepot", city:"Delhi",   ...SELLER_SCHEMES.s3, products:"All products",expires:"Ends 20 Jun"},
+            {seller:"Apollo Dist", city:"Chennai", ...SELLER_SCHEMES.s5, products:"Orders ≥50 units",expires:"Ends 25 Jun"},
+          ].map((s,i)=>{
+            const sellerInitial = s.seller.charAt(0);
+            return (
+            <div key={i} style={{background:C.white,borderRadius:10,padding:0,
+              border:`1.5px solid ${C.border}`,position:"relative",overflow:"hidden",
+              boxShadow:"0 1px 3px rgba(0,0,0,.04)",transition:"all .2s ease",cursor:"default"}}
+              onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 6px 16px rgba(10,35,66,.08)";e.currentTarget.style.transform="translateY(-2px)";e.currentTarget.style.borderColor=s.text}}
+              onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,.04)";e.currentTarget.style.transform="translateY(0)";e.currentTarget.style.borderColor=C.border}}>
+              {/* Left accent bar */}
+              <div style={{position:"absolute",left:0,top:0,bottom:0,width:4,background:s.text}}></div>
+
+              <div style={{padding:"16px 14px 14px 18px"}}>
+                {/* Seller row */}
+                <div style={{display:"flex",alignItems:"center",gap:5,marginBottom:12}}>
+                  <div style={{width:20,height:20,borderRadius:5,background:`linear-gradient(135deg,${C.navy},${C.navy2})`,
+                    display:"flex",alignItems:"center",justifyContent:"center",
+                    fontSize:8,fontWeight:800,color:C.white}}>
+                    {sellerInitial}
+                  </div>
+                  <span style={{fontSize:10,fontWeight:600,color:C.text2}}>{s.seller}</span>
+                  <span style={{fontSize:8,color:C.text3}}>· {s.city}</span>
+                </div>
+
+                {/* Big scheme badge */}
+                <div style={{display:"inline-block",background:s.color,border:`1.5px solid ${s.text}33`,
+                  borderRadius:8,padding:"6px 12px",marginBottom:10}}>
+                  <span style={{fontSize:18,fontWeight:800,color:s.text,letterSpacing:"-.02em"}}>
+                    {s.label}
+                  </span>
+                </div>
+
+                {/* Offer description — the hero text */}
+                <div style={{fontSize:13,fontWeight:700,color:C.navy,lineHeight:1.4,marginBottom:4,
+                  textAlign:"left"}}>
+                  {s.desc}
+                </div>
+                <div style={{fontSize:9,color:C.text3,marginBottom:12,textAlign:"left"}}>
+                  Free goods scheme · Auto-applied at checkout
+                </div>
+
+                {/* Divider */}
+                <div style={{borderTop:`1px solid ${C.border}`,marginBottom:10}}></div>
+
+                {/* Footer row */}
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                  <span style={{fontSize:9,color:C.text3}}>{s.products}</span>
+                  <span style={{background:s.color,color:s.text,fontSize:8,fontWeight:800,
+                    padding:"3px 10px",borderRadius:99,letterSpacing:".02em"}}>
+                    {s.expires}
+                  </span>
                 </div>
               </div>
-              <div style={{fontSize:10,fontWeight:700,color:s.text,marginBottom:2}}>{s.seller}</div>
-              <div style={{fontSize:8,color:s.text,opacity:.7,marginBottom:6}}>{s.desc}</div>
-              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                <span style={{fontSize:8,color:s.text,opacity:.6}}>{s.products}</span>
-                <span style={{background:`${s.text}18`,color:s.text,fontSize:7,fontWeight:700,
-                  padding:"2px 6px",borderRadius:3}}>{s.expires}</span>
-              </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
 
@@ -679,78 +710,99 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
               return (
                 <div key={p.id} onClick={()=>onProductSelect(p)} style={{
                   background:C.white,border:`1.5px solid ${C.border}`,borderRadius:12,
-                  padding:0,cursor:"pointer",overflow:"hidden",transition:"all .2s ease",
-                  boxShadow:"0 1px 3px rgba(0,0,0,.04)"}}
-                  onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 8px 20px rgba(10,35,66,.08)";
-                    e.currentTarget.style.borderColor=C.green;e.currentTarget.style.transform="translateY(-3px)"}}
+                  padding:0,cursor:"pointer",overflow:"hidden",transition:"all .25s cubic-bezier(.4,0,.2,1)",
+                  boxShadow:"0 1px 3px rgba(0,0,0,.04)",position:"relative"}}
+                  onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 12px 28px rgba(10,35,66,.1)";
+                    e.currentTarget.style.borderColor=C.teal;e.currentTarget.style.transform="translateY(-4px)"}}
                   onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 1px 3px rgba(0,0,0,.04)";
                     e.currentTarget.style.borderColor=C.border;e.currentTarget.style.transform="translateY(0)"}}>
-                  
-                  {/* Discount badge header */}
-                  <div style={{background:`linear-gradient(135deg, ${C.lgreen} 0%, #A7F3D0 100%)`,
-                    padding:"12px 14px",borderBottom:`1px solid ${C.green}`,
-                    display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                    <div style={{display:"flex",alignItems:"center",gap:6}}>
-                      <div style={{width:32,height:32,borderRadius:8,background:C.green,
-                        display:"flex",alignItems:"center",justifyContent:"center",
-                        fontSize:14,fontWeight:800,color:C.white,boxShadow:"0 2px 6px rgba(5,150,105,.2)"}}>
-                        {savings}%
-                      </div>
-                      <div>
-                        <div style={{fontSize:10,fontWeight:700,color:C.dkgreen,
-                          textTransform:"uppercase",letterSpacing:".05em"}}>Save</div>
-                        <div style={{fontSize:9,color:C.green,fontWeight:600}}>vs PTR</div>
-                      </div>
-                    </div>
-                    <div style={{background:C.white,padding:"3px 8px",borderRadius:6,
-                      fontSize:9,fontWeight:700,color:C.green,border:`1px solid ${C.green}`}}>
-                      BEST VALUE
-                    </div>
+
+                  {/* Top accent bar */}
+                  <div style={{height:4,background:`linear-gradient(90deg,${C.teal},${C.mint})`}}></div>
+
+                  {/* Floating discount badge */}
+                  <div style={{position:"absolute",top:14,right:14,zIndex:2,
+                    background:`linear-gradient(135deg,${C.green},${C.mint})`,
+                    borderRadius:20,padding:"3px 10px",boxShadow:"0 2px 8px rgba(5,150,105,.3)"}}>
+                    <span style={{fontSize:10,fontWeight:800,color:C.white,letterSpacing:".02em"}}>
+                      −{savings}%
+                    </span>
                   </div>
 
                   {/* Product info */}
-                  <div style={{padding:"14px"}}>
+                  <div style={{padding:"16px 16px 14px"}}>
+                    {/* Category pill */}
                     <div style={{marginBottom:10}}>
-                      <div style={{fontSize:14,fontWeight:700,color:C.navy,marginBottom:3,
-                        lineHeight:1.3,height:36,overflow:"hidden",display:"-webkit-box",
-                        WebkitLineClamp:2,WebkitBoxOrient:"vertical"}}>
-                        {p.name}
-                      </div>
-                      <div style={{fontSize:10,color:C.text3,marginBottom:6}}>{p.pack}</div>
+                      <span style={{fontSize:8,fontWeight:700,color:C.teal,
+                        background:C.accentL,padding:"2px 8px",borderRadius:4,
+                        textTransform:"uppercase",letterSpacing:".06em"}}>
+                        {p.sub}
+                      </span>
                     </div>
 
-                    {/* Pricing comparison */}
-                    <div style={{background:C.bg,borderRadius:8,padding:"10px 12px",marginBottom:12}}>
-                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",
-                        marginBottom:6,paddingBottom:6,borderBottom:`1px solid ${C.border}`}}>
-                        <span style={{fontSize:10,color:C.text3}}>PTR</span>
-                        <span style={{fontSize:12,fontWeight:600,color:C.text2,
-                          textDecoration:"line-through"}}>
-                          ₹{p.ptr.toFixed(2)}
-                        </span>
-                      </div>
-                      <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline"}}>
-                        <span style={{fontSize:10,fontWeight:600,color:C.text}}>Your Price</span>
-                        <span style={{fontSize:18,fontWeight:800,color:C.green}}>
+                    {/* Product name */}
+                    <div style={{fontSize:14,fontWeight:800,color:C.navy,marginBottom:3,
+                      lineHeight:1.3,height:37,overflow:"hidden",display:"-webkit-box",
+                      WebkitLineClamp:2,WebkitBoxOrient:"vertical",textAlign:"left"}}>
+                      {p.name}
+                    </div>
+                    <div style={{fontSize:10,color:C.text3,marginBottom:14,textAlign:"left"}}>
+                      {p.pack} · {p.mfr}
+                    </div>
+
+                    {/* Price block */}
+                    <div style={{background:C.bg,borderRadius:10,padding:"12px 14px",marginBottom:14}}>
+                      <div style={{display:"flex",alignItems:"flex-end",gap:8,marginBottom:4}}>
+                        <span style={{fontSize:22,fontWeight:800,color:C.teal,lineHeight:1}}>
                           {fmt(best.netrate)}
                         </span>
+                        <span style={{fontSize:12,color:C.text3,textDecoration:"line-through",marginBottom:2}}>
+                          ₹{p.ptr.toFixed(0)}
+                        </span>
+                      </div>
+                      <div style={{display:"flex",alignItems:"center",gap:4}}>
+                        <span style={{fontSize:9,color:C.dkgreen,fontWeight:700}}>
+                          You save ₹{(p.ptr - best.netrate).toFixed(1)} per strip
+                        </span>
                       </div>
                     </div>
 
-                    {/* Seller info */}
+                    {/* Seller + delivery row */}
                     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",
-                      marginBottom:12,padding:"8px 10px",background:C.bg,borderRadius:6}}>
-                      <div style={{fontSize:11,color:C.text2,fontWeight:500}}>
-                        {best.firm}
+                      marginBottom:14,padding:"0 2px"}}>
+                      <div style={{display:"flex",alignItems:"center",gap:6}}>
+                        <div style={{width:22,height:22,borderRadius:6,background:`linear-gradient(135deg,${C.navy},${C.navy2})`,
+                          display:"flex",alignItems:"center",justifyContent:"center",
+                          fontSize:9,fontWeight:800,color:C.white,boxShadow:"0 1px 4px rgba(10,35,66,.2)"}}>
+                          {best.firm.charAt(0)}
+                        </div>
+                        <span style={{fontSize:10,fontWeight:600,color:C.text2}}>{best.firm}</span>
+                        {SELLER_SCHEMES[best.id]&&(
+                          <span style={{fontSize:8,fontWeight:700,color:SELLER_SCHEMES[best.id].text,
+                            background:SELLER_SCHEMES[best.id].color,padding:"1px 6px",borderRadius:99}}>
+                            {SELLER_SCHEMES[best.id].short}
+                          </span>
+                        )}
                       </div>
-                      <div style={{fontSize:10,color:C.text3}}>{best.del}</div>
+                      <div style={{display:"flex",alignItems:"center",gap:3}}>
+                        <span style={{fontSize:10}}>🚚</span>
+                        <span style={{fontSize:9,fontWeight:600,color:C.text3}}>{best.del}</span>
+                      </div>
                     </div>
 
-                    {/* Add button */}
-                    <Btn variant="success" full onClick={e=>{e.stopPropagation();onAddToCart(p,best,1)}}
-                      style={{height:36,fontSize:12,fontWeight:600}}>
+                    {/* CTA */}
+                    <button onClick={e=>{e.stopPropagation();onAddToCart(p,best,1)}}
+                      style={{width:"100%",height:38,borderRadius:8,border:"none",
+                        background:`linear-gradient(135deg,${C.teal} 0%,${C.teal2} 100%)`,
+                        color:C.white,fontSize:12,fontWeight:800,cursor:"pointer",
+                        display:"flex",alignItems:"center",justifyContent:"center",gap:6,
+                        boxShadow:"0 3px 10px rgba(8,145,178,.25)",transition:"all .2s",
+                        letterSpacing:".01em"}}
+                      onMouseEnter={e=>{e.currentTarget.style.boxShadow="0 5px 16px rgba(8,145,178,.4)";e.currentTarget.style.transform="scale(1.01)"}}
+                      onMouseLeave={e=>{e.currentTarget.style.boxShadow="0 3px 10px rgba(8,145,178,.25)";e.currentTarget.style.transform="scale(1)"}}>
+                      <span style={{fontSize:13}}>🛒</span>
                       Add to Cart
-                    </Btn>
+                    </button>
                   </div>
                 </div>
               );
@@ -1332,253 +1384,285 @@ function ProductPage({product,onBack,onAddToCart,cart}) {
 
 // ── CART SIDEBAR ──────────────────────────────────────────────────────────────
 function CartSidebar({cart,setCart,onCheckout,onClose}) {
-  const [showPricingHelp, setShowPricingHelp] = useState(false);
   const [collapsed, setCollapsed] = useState({});
   const toggleCollapse = (firm) => setCollapsed(prev=>({...prev,[firm]:!prev[firm]}));
-  
-  if(cart.length===0) return (
-    <div style={{width:380,borderLeft:`2px solid ${C.border}`,background:C.white,
-      display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",
-      padding:32,flexShrink:0}}>
-      <div style={{width:80,height:80,borderRadius:40,background:C.bg,
-        display:"flex",alignItems:"center",justifyContent:"center",fontSize:40,marginBottom:16}}>
-        🛒
-      </div>
-      <div style={{fontSize:16,fontWeight:700,color:C.text,marginBottom:8}}>Your cart is empty</div>
-      <div style={{fontSize:13,color:C.text3,textAlign:"center",lineHeight:1.5}}>
-        Search and add products to begin your order
-      </div>
-    </div>
-  );
+
   const bySeller = cart.reduce((acc,item)=>{
     if(!acc[item.seller.firm]) acc[item.seller.firm]={seller:item.seller,items:[]};
     acc[item.seller.firm].items.push(item);
     return acc;
   },{});
-  
-  // Calculate totals
   const subtotal = cart.reduce((s,i)=>s+i.seller.netrate*i.qty,0);
   const gst = subtotal*0.12;
   const totalMRP = cart.reduce((s,i)=>s+i.product.mrp*i.qty,0);
   const totalSavings = totalMRP - subtotal;
+  const sellerCount = Object.keys(bySeller).length;
+
   const removeItem = (pid,sid) => setCart(prev=>prev.filter(c=>!(c.product.id===pid&&c.seller.id===sid)));
   const updateQty  = (pid,sid,qty) => {
     if(qty<1){removeItem(pid,sid);return;}
     setCart(prev=>prev.map(c=>c.product.id===pid&&c.seller.id===sid?{...c,qty}:c));
   };
+
   return (
-    <div style={{width:360,borderLeft:`2px solid ${C.border}`,background:C.white,
-      display:"flex",flexDirection:"column",flexShrink:0}}>
-      {/* Header */}
-      <div style={{padding:"10px 12px",borderBottom:`1px solid ${C.border}`,background:C.navy}}>
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-          <div>
-            <div style={{fontSize:12,fontWeight:800,color:C.white}}>Cart ({cart.length})</div>
-            <div style={{fontSize:9,color:"rgba(255,255,255,.7)"}}>
-              {Object.keys(bySeller).length} sellers • {fmt(subtotal+gst)} total
+    <div style={{width:376,borderLeft:`1.5px solid ${C.border}`,background:"#F8FAFC",
+      display:"flex",flexDirection:"column",flexShrink:0,boxShadow:"-4px 0 20px rgba(0,0,0,.06)"}}>
+
+      {/* ── Header ── */}
+      <div style={{padding:"14px 16px 12px",background:C.white,
+        borderBottom:`1.5px solid ${C.border}`,flexShrink:0}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:2}}>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:18}}>🛒</span>
+            <div>
+              <div style={{fontSize:14,fontWeight:800,color:C.navy,lineHeight:1.2}}>Your Cart</div>
+              <div style={{fontSize:10,color:C.text3}}>{cart.length} item{cart.length!==1?"s":""} from {sellerCount} seller{sellerCount!==1?"s":""}</div>
             </div>
           </div>
-          <button onClick={onClose} style={{background:"rgba(255,255,255,.15)",border:"none",
-            cursor:"pointer",fontSize:16,color:C.white,padding:0,width:24,height:24,
-            display:"flex",alignItems:"center",justifyContent:"center",transition:"all .15s",
-            borderRadius:4}}
-            onMouseEnter={e=>e.currentTarget.style.background="rgba(255,255,255,.25)"}
-            onMouseLeave={e=>e.currentTarget.style.background="rgba(255,255,255,.15)"}
-            title="Close cart">
+          <button onClick={onClose}
+            style={{width:28,height:28,borderRadius:6,border:`1.5px solid ${C.border}`,
+              background:C.white,cursor:"pointer",fontSize:15,color:C.text2,
+              display:"flex",alignItems:"center",justifyContent:"center",
+              transition:"all .15s",fontWeight:700}}
+            onMouseEnter={e=>{e.currentTarget.style.background="#FEE2E2";e.currentTarget.style.borderColor="#FCA5A5";e.currentTarget.style.color="#DC2626"}}
+            onMouseLeave={e=>{e.currentTarget.style.background=C.white;e.currentTarget.style.borderColor=C.border;e.currentTarget.style.color=C.text2}}>
             ×
           </button>
         </div>
+        {/* Savings pill */}
+        {cart.length>0&&(
+          <div style={{display:"inline-flex",alignItems:"center",gap:5,marginTop:6,
+            background:"#ECFDF5",border:"1px solid #A7F3D0",borderRadius:20,
+            padding:"3px 10px 3px 7px"}}>
+            <span style={{fontSize:11}}>💰</span>
+            <span style={{fontSize:10,fontWeight:700,color:C.dkgreen}}>
+              You save {fmt(totalSavings)} vs MRP
+            </span>
+          </div>
+        )}
       </div>
 
-      {/* Quick Summary */}
-      <div style={{padding:"8px 12px",background:"#ECFDF5",borderBottom:`1px solid ${C.border}`,
-        display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-        <div style={{fontSize:9,color:C.dkgreen}}>
-          💰 Saving {fmt(totalSavings)} vs MRP
-        </div>
-        <button onClick={()=>setShowPricingHelp(!showPricingHelp)}
-          style={{background:"none",border:"none",cursor:"pointer",
-            fontSize:8,color:C.dkgreen,fontWeight:600,padding:0,
-            textDecoration:"underline"}}>
-          {showPricingHelp?"Hide":"Pricing?"}
-        </button>
-      </div>
-
-      {/* Pricing help tooltip */}
-      {showPricingHelp && (
-        <div style={{padding:"8px 12px",background:"#FFFBEB",borderBottom:`1px solid ${C.border}`,
-          fontSize:9,color:"#78350F",lineHeight:1.4}}>
-          <strong>Net Rate</strong> = PTR × (1−discount%). Separate GST invoice per seller.
+      {/* ── Empty state ── */}
+      {cart.length===0&&(
+        <div style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",
+          justifyContent:"center",padding:32}}>
+          <div style={{fontSize:52,marginBottom:14,opacity:.4}}>🛒</div>
+          <div style={{fontSize:15,fontWeight:700,color:C.text,marginBottom:6}}>Cart is empty</div>
+          <div style={{fontSize:12,color:C.text3,textAlign:"center",lineHeight:1.6}}>
+            Search and add products to start your order
+          </div>
         </div>
       )}
 
-      {/* Cart items */}
-      <div style={{flex:1,overflowY:"auto",padding:"6px 0"}}>
-        {Object.values(bySeller).map(({seller,items},sellerIdx)=>{
-          const sellerSubtotal = items.reduce((s,i)=>s+i.seller.netrate*i.qty,0);
-          const sellerGST = sellerSubtotal * 0.12;
-          const schemeForSeller = SELLER_SCHEMES[seller.id];
-          const hasScheme = !!schemeForSeller;
-          
-          const isCollapsed = collapsed[seller.firm];
-          return (
-            <div key={seller.firm} style={{marginBottom:sellerIdx<Object.values(bySeller).length-1?4:0}}>
-              {/* Seller header - compact + collapsible */}
-              <div onClick={()=>toggleCollapse(seller.firm)}
-                style={{padding:"8px 12px",background:C.navy,cursor:"pointer",
-                borderTop:`1px solid ${C.navy}`,borderBottom:`1px solid rgba(255,255,255,.1)`}}>
-                <div style={{display:"flex",alignItems:"center",gap:5}}>
-                  <div style={{width:20,height:20,borderRadius:4,background:C.white,
+      {/* ── Seller groups ── */}
+      {cart.length>0&&(
+        <div style={{flex:1,overflowY:"auto",padding:"10px 10px 4px"}}>
+          {Object.values(bySeller).map(({seller,items},sellerIdx)=>{
+            const sellerSubtotal = items.reduce((s,i)=>s+i.seller.netrate*i.qty,0);
+            const sellerGST = sellerSubtotal * 0.12;
+            const schemeForSeller = SELLER_SCHEMES[seller.id];
+            const hasScheme = !!schemeForSeller;
+            const isCollapsed = collapsed[seller.firm];
+
+            return (
+              <div key={seller.firm} style={{
+                background:C.white,border:`1.5px solid ${C.border}`,borderRadius:10,
+                marginBottom:10,overflow:"hidden",
+                boxShadow:"0 1px 4px rgba(0,0,0,.04)"}}>
+
+                {/* Seller header */}
+                <div onClick={()=>toggleCollapse(seller.firm)}
+                  style={{padding:"10px 12px",cursor:"pointer",
+                    background:`linear-gradient(to right, ${C.navy} 0%, ${C.navy2} 100%)`,
+                    display:"flex",alignItems:"center",gap:8}}
+                  onMouseEnter={e=>e.currentTarget.style.opacity=".92"}
+                  onMouseLeave={e=>e.currentTarget.style.opacity="1"}>
+                  <div style={{width:26,height:26,borderRadius:6,
+                    background:"rgba(255,255,255,.15)",border:"1.5px solid rgba(255,255,255,.3)",
                     display:"flex",alignItems:"center",justifyContent:"center",
-                    fontSize:9,fontWeight:800,color:C.navy}}>
+                    fontSize:11,fontWeight:800,color:C.white,flexShrink:0}}>
                     {seller.firm.charAt(0)}
                   </div>
-                  <div style={{flex:1}}>
-                    <div style={{fontSize:10,fontWeight:700,color:C.white}}>{seller.firm}</div>
-                    <div style={{fontSize:8,color:"rgba(255,255,255,.6)"}}>{seller.city} • {items.length} item{items.length>1?"s":""}</div>
-                  </div>
-                  {hasScheme && (
-                    <div style={{background:schemeForSeller.color,padding:"2px 6px",borderRadius:3,
-                      display:"flex",alignItems:"center",gap:3}}>
-                      <span style={{fontSize:8,fontWeight:800,color:schemeForSeller.text}}>🎁 {schemeForSeller.short}</span>
+                  <div style={{flex:1,minWidth:0}}>
+                    <div style={{fontSize:11,fontWeight:700,color:C.white,
+                      overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
+                      {seller.firm}
                     </div>
+                    <div style={{fontSize:8,color:"rgba(255,255,255,.55)"}}>
+                      {seller.city} · {items.length} item{items.length>1?"s":""}
+                    </div>
+                  </div>
+                  {hasScheme&&(
+                    <span style={{fontSize:8,fontWeight:800,color:schemeForSeller.text,
+                      background:schemeForSeller.color,padding:"2px 7px",borderRadius:99}}>
+                      🎁 {schemeForSeller.short}
+                    </span>
                   )}
-                  <span style={{fontSize:14,color:C.white,marginLeft:4,transition:"transform .15s",
-                    display:"inline-block",transform:isCollapsed?"rotate(-90deg)":"rotate(0deg)",lineHeight:1}}>▾</span>
+                  <span style={{fontSize:12,color:"rgba(255,255,255,.7)",
+                    display:"inline-block",transition:"transform .2s",
+                    transform:isCollapsed?"rotate(-90deg)":"rotate(0deg)"}}>▾</span>
                 </div>
-              </div>
 
-              {/* Items + subtotal - collapsible */}
-              {!isCollapsed && items.map((item,itemIdx)=>{
-                const itemMRP = item.product.mrp * item.qty;
-                const itemTotal = item.seller.netrate * item.qty;
-                const itemSavings = itemMRP - itemTotal;
-                const discountPct = ((item.product.ptr - item.seller.netrate) / item.product.ptr * 100).toFixed(0);
-                
-                return (
-                  <div key={item.product.id} style={{padding:"6px 10px",
-                    background:C.white,borderBottom:`1px solid ${C.border}`}}>
-                    {/* Row 1: Product + Price + Remove */}
-                    <div style={{display:"flex",alignItems:"baseline",gap:6,marginBottom:4}}>
-                      <div style={{fontSize:10,fontWeight:700,color:C.text,flex:1,minWidth:0,
-                        overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
-                        {item.product.name}
-                      </div>
-                      <div style={{display:"flex",alignItems:"baseline",gap:3,flexShrink:0}}>
-                        <span style={{fontSize:9,color:C.text3,textDecoration:"line-through"}}>₹{item.product.ptr.toFixed(2)}</span>
-                        <span style={{fontSize:11,fontWeight:800,color:C.teal}}>{fmt(item.seller.netrate)}</span>
-                        <span style={{fontSize:8,fontWeight:700,color:C.green}}>−{discountPct}%</span>
-                      </div>
-                      <button onClick={e=>{e.stopPropagation();removeItem(item.product.id,seller.id)}}
-                        style={{background:"#FEE2E2",border:"none",cursor:"pointer",color:"#DC2626",
-                          fontSize:12,fontWeight:700,flexShrink:0,width:16,height:16,padding:0,
-                          display:"flex",alignItems:"center",justifyContent:"center",
-                          borderRadius:3,transition:"all .15s",lineHeight:1}}
-                        onMouseEnter={e=>{e.currentTarget.style.background="#DC2626";e.currentTarget.style.color="#fff"}}
-                        onMouseLeave={e=>{e.currentTarget.style.background="#FEE2E2";e.currentTarget.style.color="#DC2626"}}>
-                        ×
-                      </button>
-                    </div>
-                    {/* Row 2: Meta + Qty + Total */}
-                    <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                      <span style={{fontSize:8,color:C.text3}}>{item.product.pack} • Exp: {item.seller.exp}</span>
-                      <div style={{display:"flex",alignItems:"center",gap:4}}>
-                        <div style={{display:"flex",alignItems:"center",gap:1}}>
-                          <button onClick={()=>updateQty(item.product.id,seller.id,item.qty-1)}
-                            style={{width:18,height:18,border:`1px solid ${C.border}`,background:C.bg,
-                              cursor:"pointer",fontSize:10,fontWeight:600,borderRadius:3,
-                              display:"flex",alignItems:"center",justifyContent:"center",
-                              color:C.text2,transition:"all .15s"}}
-                            onMouseEnter={e=>{e.currentTarget.style.borderColor=C.teal;e.currentTarget.style.color=C.teal}}
-                            onMouseLeave={e=>{e.currentTarget.style.borderColor=C.border;e.currentTarget.style.color=C.text2}}>
-                            −
-                          </button>
-                          <div style={{minWidth:24,textAlign:"center",fontSize:10,fontWeight:800,color:C.text}}>
-                            {item.qty}
+                {/* Items */}
+                {!isCollapsed&&(
+                  <div style={{padding:"8px 10px",display:"flex",flexDirection:"column",gap:7}}>
+                    {items.map(item=>{
+                      const itemTotal = item.seller.netrate * item.qty;
+                      const discountPct = ((item.product.ptr - item.seller.netrate)/item.product.ptr*100).toFixed(0);
+                      return (
+                        <div key={item.product.id}
+                          style={{background:"#F8FAFC",border:`1px solid ${C.border}`,
+                            borderRadius:8,padding:"9px 10px"}}>
+                          {/* Row 1: name + price + remove */}
+                          <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
+                            <div style={{flex:1,minWidth:0}}>
+                              <div style={{fontSize:11.5,fontWeight:700,color:C.text,
+                                lineHeight:1.35,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",
+                                textAlign:"left"}}>
+                                {item.product.name}
+                              </div>
+                            </div>
+                            <span style={{fontSize:12,fontWeight:800,color:C.teal,flexShrink:0}}>
+                              {fmt(item.seller.netrate)}
+                            </span>
+                            <button onClick={e=>{e.stopPropagation();removeItem(item.product.id,seller.id)}}
+                              style={{width:20,height:20,borderRadius:5,border:"1.5px solid #FECACA",
+                                background:"#FEF2F2",cursor:"pointer",color:"#EF4444",
+                                fontSize:13,fontWeight:800,flexShrink:0,padding:0,lineHeight:1,
+                                display:"flex",alignItems:"center",justifyContent:"center",
+                                transition:"all .15s"}}
+                              onMouseEnter={e=>{e.currentTarget.style.background="#EF4444";e.currentTarget.style.color="#fff";e.currentTarget.style.borderColor="#EF4444"}}
+                              onMouseLeave={e=>{e.currentTarget.style.background="#FEF2F2";e.currentTarget.style.color="#EF4444";e.currentTarget.style.borderColor="#FECACA"}}>
+                              ×
+                            </button>
                           </div>
-                          <button onClick={()=>updateQty(item.product.id,seller.id,item.qty+1)}
-                            style={{width:18,height:18,border:`1px solid ${C.border}`,background:C.bg,
-                              cursor:"pointer",fontSize:10,fontWeight:600,borderRadius:3,
-                              display:"flex",alignItems:"center",justifyContent:"center",
-                              color:C.text2,transition:"all .15s"}}
-                            onMouseEnter={e=>{e.currentTarget.style.borderColor=C.teal;e.currentTarget.style.color=C.teal}}
-                            onMouseLeave={e=>{e.currentTarget.style.borderColor=C.border;e.currentTarget.style.color=C.text2}}>
-                            +
-                          </button>
+                          {/* Row 2: meta + discount + stepper + total */}
+                          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                            <div style={{display:"flex",alignItems:"center",gap:3}}>
+                              <span style={{fontSize:9,color:C.text3}}>{item.product.pack} · Exp {item.seller.exp}</span>
+                              <span style={{fontSize:9,color:C.text3,textDecoration:"line-through"}}>₹{item.product.ptr.toFixed(0)}</span>
+                              <span style={{fontSize:8,fontWeight:700,color:"#fff",
+                                background:"#10B981",padding:"1px 5px",borderRadius:3}}>
+                                −{discountPct}%
+                              </span>
+                            </div>
+                            <div style={{display:"flex",alignItems:"center",gap:6}}>
+                              {/* Qty stepper */}
+                              <div style={{display:"flex",alignItems:"center",
+                                border:`1.5px solid ${C.border}`,borderRadius:6,
+                                overflow:"hidden",background:C.white}}>
+                                <button onClick={()=>updateQty(item.product.id,seller.id,item.qty-1)}
+                                  style={{width:22,height:22,border:"none",background:"transparent",
+                                    cursor:"pointer",fontSize:13,color:C.text2,
+                                    display:"flex",alignItems:"center",justifyContent:"center",
+                                    transition:"all .15s"}}
+                                  onMouseEnter={e=>{e.currentTarget.style.background=C.teal;e.currentTarget.style.color="#fff"}}
+                                  onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.color=C.text2}}>
+                                  −
+                                </button>
+                                <span style={{minWidth:24,textAlign:"center",fontSize:10,fontWeight:800,
+                                  color:C.navy,borderLeft:`1px solid ${C.border}`,
+                                  borderRight:`1px solid ${C.border}`,lineHeight:"22px"}}>
+                                  {item.qty}
+                                </span>
+                                <button onClick={()=>updateQty(item.product.id,seller.id,item.qty+1)}
+                                  style={{width:22,height:22,border:"none",background:"transparent",
+                                    cursor:"pointer",fontSize:13,color:C.text2,
+                                    display:"flex",alignItems:"center",justifyContent:"center",
+                                    transition:"all .15s"}}
+                                  onMouseEnter={e=>{e.currentTarget.style.background=C.teal;e.currentTarget.style.color="#fff"}}
+                                  onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.color=C.text2}}>
+                                  +
+                                </button>
+                              </div>
+                              <span style={{fontSize:12,fontWeight:800,color:C.navy,minWidth:46,textAlign:"right"}}>
+                                {fmt(itemTotal)}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                        <div style={{fontSize:11,fontWeight:800,color:C.navy,minWidth:46,textAlign:"right"}}>
-                          {fmt(itemTotal)}
+                      );
+                    })}
+
+                    {/* Scheme badge */}
+                    {hasScheme&&(
+                      <div style={{display:"flex",alignItems:"center",gap:6,padding:"6px 8px",
+                        background:schemeForSeller.color,borderRadius:6,
+                        border:`1px dashed ${schemeForSeller.text}66`}}>
+                        <span style={{fontSize:12}}>🎁</span>
+                        <div style={{flex:1}}>
+                          <div style={{fontSize:10,fontWeight:700,color:schemeForSeller.text}}>
+                            {schemeForSeller.label} applied
+                          </div>
+                          <div style={{fontSize:8.5,color:schemeForSeller.text,opacity:.75}}>{schemeForSeller.desc}</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                );
-              })}
+                    )}
 
-              {/* Seller subtotal - compact, hidden when collapsed */}
-              {!isCollapsed && <div style={{padding:"5px 10px",background:C.bg,borderBottom:`1px solid ${C.border}`}}>
-                {hasScheme && (
-                  <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:5,
-                    background:schemeForSeller.color,borderRadius:4,padding:"3px 6px",
-                    border:`1px dashed ${schemeForSeller.text}55`}}>
-                    <span style={{fontSize:9}}>🎁</span>
-                    <span style={{fontSize:8,fontWeight:700,color:schemeForSeller.text}}>
-                      {schemeForSeller.label} Applied
-                    </span>
-                    <span style={{fontSize:8,color:schemeForSeller.text,opacity:.75,marginLeft:"auto"}}>
-                      {schemeForSeller.desc}
-                    </span>
+                    {/* Seller subtotal */}
+                    <div style={{borderTop:`1px dashed ${C.border}`,paddingTop:7,
+                      display:"flex",flexDirection:"column",gap:3}}>
+                      {[["Subtotal",fmt(sellerSubtotal)],["GST 12%",fmt(sellerGST)]].map(([l,v])=>(
+                        <div key={l} style={{display:"flex",justifyContent:"space-between",
+                          fontSize:10,color:C.text3}}>
+                          <span>{l}</span>
+                          <span style={{fontWeight:600,color:C.text2}}>{v}</span>
+                        </div>
+                      ))}
+                      <div style={{display:"flex",justifyContent:"space-between",
+                        fontSize:11,fontWeight:800,color:C.navy,paddingTop:2}}>
+                        <span>Seller Total</span>
+                        <span style={{color:C.teal}}>{fmt(sellerSubtotal+sellerGST)}</span>
+                      </div>
+                    </div>
                   </div>
                 )}
-                <div style={{display:"flex",justifyContent:"space-between",fontSize:9,
-                  color:C.text2,marginBottom:2}}>
-                  <span>Subtotal</span>
-                  <span style={{fontWeight:600}}>{fmt(sellerSubtotal)}</span>
-                </div>
-                <div style={{display:"flex",justifyContent:"space-between",fontSize:9,
-                  color:C.text2}}>
-                  <span>GST 12%</span>
-                  <span style={{fontWeight:600}}>{fmt(sellerGST)}</span>
-                </div>
-              </div>}
-            </div>
-          );
-        })}
-      </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
-      {/* Footer with totals - compact */}
-      <div style={{borderTop:`2px solid ${C.border}`,padding:"10px 12px",background:C.white}}>
-        <div style={{background:C.bg,borderRadius:6,padding:"8px 10px",marginBottom:8,
-          border:`1px solid ${C.border}`}}>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:9,color:C.text2,
-            marginBottom:3}}>
-            <span>Subtotal</span>
-            <span style={{fontWeight:600}}>{fmt(subtotal)}</span>
+      {/* ── Footer ── */}
+      {cart.length>0&&(
+        <div style={{borderTop:`1.5px solid ${C.border}`,padding:"12px 14px 14px",
+          background:C.white,flexShrink:0,
+          boxShadow:"0 -4px 16px rgba(0,0,0,.06)"}}>
+          {/* Totals breakdown */}
+          <div style={{marginBottom:10}}>
+            {[
+              ["Subtotal (Net)",fmt(subtotal),"inherit"],
+              ["GST (12%)","+"+fmt(gst),"inherit"],
+              ["Total Savings","−"+fmt(totalSavings),C.dkgreen],
+            ].map(([l,v,clr])=>(
+              <div key={l} style={{display:"flex",justifyContent:"space-between",
+                fontSize:10.5,color:C.text2,marginBottom:4}}>
+                <span>{l}</span>
+                <span style={{fontWeight:600,color:clr}}>{v}</span>
+              </div>
+            ))}
+            <div style={{display:"flex",justifyContent:"space-between",
+              fontSize:15,fontWeight:800,paddingTop:8,marginTop:4,
+              borderTop:`1.5px solid ${C.border}`}}>
+              <span style={{color:C.text}}>Grand Total</span>
+              <span style={{color:C.teal}}>{fmt(subtotal+gst)}</span>
+            </div>
           </div>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:9,color:C.text2,marginBottom:3}}>
-            <span>GST</span>
-            <span style={{fontWeight:600}}>+{fmt(gst)}</span>
-          </div>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:9,color:C.green,
-            fontWeight:700,marginBottom:6,paddingBottom:6,borderBottom:`1px solid ${C.border}`}}>
-            <span>Savings</span>
-            <span>−{fmt(totalSavings)}</span>
-          </div>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:14,fontWeight:800}}>
-            <span style={{color:C.text}}>Total</span>
-            <span style={{color:C.teal}}>{fmt(subtotal+gst)}</span>
+          <button onClick={onCheckout}
+            style={{width:"100%",height:42,background:`linear-gradient(135deg,${C.teal} 0%,${C.teal2} 100%)`,
+              border:"none",borderRadius:8,cursor:"pointer",
+              fontSize:13,fontWeight:800,color:"#fff",letterSpacing:".01em",
+              boxShadow:"0 4px 14px rgba(8,145,178,.35)",transition:"all .2s",
+              display:"flex",alignItems:"center",justifyContent:"center",gap:6,marginBottom:8}}
+            onMouseEnter={e=>e.currentTarget.style.boxShadow="0 6px 20px rgba(8,145,178,.5)"}
+            onMouseLeave={e=>e.currentTarget.style.boxShadow="0 4px 14px rgba(8,145,178,.35)"}>
+            Proceed to Pay  →
+          </button>
+          <div style={{fontSize:9.5,color:C.text3,textAlign:"center"}}>
+            {sellerCount} seller order{sellerCount>1?"s":""} · Separate GST invoices per seller
           </div>
         </div>
-        
-        <Btn variant="primary" full onClick={onCheckout}
-          style={{height:36,fontSize:12,fontWeight:700,marginBottom:6}}>
-          Place Order →
-        </Btn>
-        
-        <div style={{fontSize:9,color:C.text3,textAlign:"center",lineHeight:1.3}}>
-          {Object.keys(bySeller).length} seller • Separate GST invoices
-        </div>
-      </div>
+      )}
     </div>
   );
 }
