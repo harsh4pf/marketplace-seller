@@ -1914,109 +1914,107 @@ function OrderDetails({orderId,onBack}) {
 // ── MY ORDERS SCREEN ──────────────────────────────────────────────────────────
 function MyOrders({onProductSelect,onViewOrder}) {
   const [activeTab, setActiveTab] = useState("all");
-  
-  // Dummy order data
+
   const orders = [
-    {id:"ORD-8823",date:"10 Jun 2026",items:3,sellers:2,total:4250.50,status:"Delivered",products:[
-      {name:"Glycomet 500mg",qty:50,rate:28.51},{name:"Crocin 500mg",qty:100,rate:17.11}]},
-    {id:"ORD-8822",date:"9 Jun 2026",items:2,sellers:1,total:1820.00,status:"In Transit",products:[
-      {name:"Augmentin 625mg",qty:20,rate:81.42}]},
-    {id:"ORD-8821",date:"8 Jun 2026",items:4,sellers:2,total:6340.75,status:"Packed",products:[
-      {name:"Atorvastatin 10mg",qty:100,rate:35.70},{name:"Pantocid 40mg",qty:50,rate:58.48}]},
-    {id:"ORD-8820",date:"7 Jun 2026",items:2,sellers:1,total:2150.00,status:"Acknowledged",products:[
-      {name:"Dolo 650mg",qty:100,rate:19.36}]},
-    {id:"ORD-8819",date:"5 Jun 2026",items:5,sellers:3,total:8920.25,status:"Delivered",products:[
-      {name:"Telma 40mg",qty:50,rate:66.30},{name:"Ecosprin 75mg",qty:200,rate:10.75}]},
-    {id:"ORD-8818",date:"3 Jun 2026",items:3,sellers:2,total:3680.00,status:"Delivered",products:[
-      {name:"Montek LC",qty:40,rate:73.10}]},
+    {id:"ORD-8823",date:"10 Jun 2026",items:3,sellers:2,total:4250.50,status:"Delivered",products:"Glycomet 500mg, Crocin 500mg"},
+    {id:"ORD-8822",date:"9 Jun 2026",items:2,sellers:1,total:1820.00,status:"In Transit",products:"Augmentin 625mg"},
+    {id:"ORD-8821",date:"8 Jun 2026",items:4,sellers:2,total:6340.75,status:"Packed",products:"Atorvastatin 10mg, Pantocid 40mg"},
+    {id:"ORD-8820",date:"7 Jun 2026",items:2,sellers:1,total:2150.00,status:"Acknowledged",products:"Dolo 650mg"},
+    {id:"ORD-8819",date:"5 Jun 2026",items:5,sellers:3,total:8920.25,status:"Delivered",products:"Telma 40mg, Ecosprin 75mg"},
+    {id:"ORD-8818",date:"3 Jun 2026",items:3,sellers:2,total:3680.00,status:"Delivered",products:"Montek LC"},
   ];
-  
+
   const statusColors = {
     "Delivered": {bg:C.lgreen,color:C.dkgreen},
     "In Transit": {bg:C.lblue,color:C.blue},
     "Packed": {bg:C.lamber,color:"#92400E"},
     "Acknowledged": {bg:"#F3E8FF",color:"#6B21A8"}
   };
-  
+
   const filteredOrders = activeTab==="all" ? orders : orders.filter(o=>o.status===activeTab);
-  
+
   return (
     <div style={{flex:1,overflowY:"auto",padding:"16px 20px",background:C.bg}}>
-      <div style={{marginBottom:16}}>
-        <h2 style={{fontSize:18,fontWeight:800,color:C.navy,margin:"0 0 4px"}}>My Orders</h2>
-        <p style={{fontSize:12,color:C.text3,margin:0}}>Track and manage your orders</p>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
+        <div>
+          <h2 style={{fontSize:18,fontWeight:800,color:C.navy,margin:"0 0 4px"}}>My Orders</h2>
+          <p style={{fontSize:12,color:C.text3,margin:0}}>Track and manage your orders</p>
+        </div>
+        <div style={{display:"flex",gap:4}}>
+          {[
+            {id:"all",label:"All",count:orders.length},
+            {id:"Delivered",label:"Delivered",count:orders.filter(o=>o.status==="Delivered").length},
+            {id:"In Transit",label:"In Transit",count:orders.filter(o=>o.status==="In Transit").length},
+            {id:"Packed",label:"Packed",count:orders.filter(o=>o.status==="Packed").length},
+            {id:"Acknowledged",label:"Pending",count:orders.filter(o=>o.status==="Acknowledged").length},
+          ].map(tab=>(
+            <button key={tab.id} onClick={()=>setActiveTab(tab.id)}
+              style={{padding:"5px 12px",background:activeTab===tab.id?C.navy:C.white,
+                border:`1px solid ${activeTab===tab.id?C.navy:C.border}`,cursor:"pointer",
+                fontSize:11,fontWeight:600,color:activeTab===tab.id?C.white:C.text2,
+                borderRadius:6,transition:"all .15s"}}>
+              {tab.label} ({tab.count})
+            </button>
+          ))}
+        </div>
       </div>
-      
-      {/* Tabs */}
-      <div style={{display:"flex",gap:4,marginBottom:16,borderBottom:`2px solid ${C.border}`,
-        paddingBottom:0}}>
-        {[
-          {id:"all",label:"All Orders",count:orders.length},
-          {id:"Delivered",label:"Delivered",count:orders.filter(o=>o.status==="Delivered").length},
-          {id:"In Transit",label:"In Transit",count:orders.filter(o=>o.status==="In Transit").length},
-          {id:"Packed",label:"Packed",count:orders.filter(o=>o.status==="Packed").length},
-          {id:"Acknowledged",label:"Pending",count:orders.filter(o=>o.status==="Acknowledged").length},
-        ].map(tab=>(
-          <button key={tab.id} onClick={()=>setActiveTab(tab.id)}
-            style={{padding:"8px 12px",background:"none",border:"none",cursor:"pointer",
-              fontSize:11,fontWeight:600,color:activeTab===tab.id?C.teal:C.text2,
-              borderBottom:activeTab===tab.id?`3px solid ${C.teal}`:"3px solid transparent",
-              transition:"all .15s"}}>
-            {tab.label} ({tab.count})
-          </button>
-        ))}
-      </div>
-      
-      {/* Orders List */}
-      <div style={{display:"flex",flexDirection:"column",gap:12}}>
-        {filteredOrders.map(order=>{
-          const statusStyle = statusColors[order.status];
-          return (
-            <div key={order.id} style={{background:C.white,border:`1.5px solid ${C.border}`,
-              borderRadius:8,padding:"12px 14px"}}>
-              <div style={{display:"flex",alignItems:"start",justifyContent:"space-between",marginBottom:10}}>
-                <div>
-                  <div style={{fontSize:13,fontWeight:800,color:C.navy,marginBottom:2}}>{order.id}</div>
-                  <div style={{fontSize:10,color:C.text3}}>
-                    {order.date} • {order.items} items • {order.sellers} sellers
-                  </div>
-                </div>
-                <div style={{display:"inline-block",background:statusStyle.bg,color:statusStyle.color,
-                  fontSize:10,fontWeight:700,padding:"4px 10px",borderRadius:5}}>
-                  {order.status}
-                </div>
-              </div>
-              
-              <div style={{display:"flex",gap:8,marginBottom:10,paddingBottom:10,
-                borderBottom:`1px solid ${C.border}`}}>
-                {order.products.slice(0,3).map((p,i)=>(
-                  <div key={i} style={{flex:1,background:C.bg,padding:"8px 10px",borderRadius:6}}>
-                    <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:2}}>{p.name}</div>
-                    <div style={{fontSize:9,color:C.text3}}>Qty: {p.qty} • {fmt(p.rate)}/unit</div>
-                  </div>
-                ))}
-                {order.products.length>3&&(
-                  <div style={{display:"flex",alignItems:"center",justifyContent:"center",
-                    padding:"8px 10px",fontSize:10,color:C.text3,fontWeight:600}}>
-                    +{order.products.length-3} more
-                  </div>
-                )}
-              </div>
-              
-              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
-                <div>
-                  <span style={{fontSize:11,color:C.text3}}>Order Total: </span>
-                  <span style={{fontSize:14,fontWeight:800,color:C.navy}}>{fmt(order.total)}</span>
-                  <span style={{fontSize:10,color:C.text3}}> (incl. GST)</span>
-                </div>
-                <div style={{display:"flex",gap:6}}>
-                  <Btn variant="ghost" onClick={()=>onViewOrder(order.id)} style={{height:32,fontSize:11}}>View Details</Btn>
-                  <Btn variant="primary" style={{height:32,fontSize:11}}>Reorder</Btn>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+
+      {/* Orders Table */}
+      <div style={{background:C.white,border:`1.5px solid ${C.border}`,borderRadius:10,overflow:"hidden"}}>
+        <table style={{width:"100%",borderCollapse:"collapse"}}>
+          <thead>
+            <tr style={{background:C.bg,borderBottom:`2px solid ${C.border}`}}>
+              {["Order ID","Date","Products","Items","Sellers","Status","Total","Action"].map((h,i)=>(
+                <th key={h} style={{padding:"10px 14px",fontSize:10,fontWeight:700,color:C.text3,
+                  textAlign:i>=6?"right":"left",textTransform:"uppercase",letterSpacing:".04em",
+                  whiteSpace:"nowrap"}}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {filteredOrders.map((order,idx)=>{
+              const s = statusColors[order.status];
+              return (
+                <tr key={order.id} style={{borderBottom:`1px solid ${C.border}`,
+                  background:idx%2===0?C.white:C.bg,
+                  transition:"all .15s",cursor:"pointer"}}
+                  onClick={()=>onViewOrder(order.id)}
+                  onMouseEnter={e=>e.currentTarget.style.background="#EFF6FF"}
+                  onMouseLeave={e=>e.currentTarget.style.background=idx%2===0?C.white:C.bg}>
+                  <td style={{padding:"11px 14px"}}>
+                    <div style={{fontSize:12,fontWeight:800,color:C.teal}}>{order.id}</div>
+                  </td>
+                  <td style={{padding:"11px 14px",fontSize:11,color:C.text2,whiteSpace:"nowrap"}}>{order.date}</td>
+                  <td style={{padding:"11px 14px",fontSize:11,color:C.text,maxWidth:200}}>
+                    <div style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{order.products}</div>
+                  </td>
+                  <td style={{padding:"11px 14px",fontSize:12,fontWeight:600,color:C.text}}>{order.items}</td>
+                  <td style={{padding:"11px 14px",fontSize:12,color:C.text2}}>{order.sellers}</td>
+                  <td style={{padding:"11px 14px"}}>
+                    <span style={{background:s.bg,color:s.color,fontSize:10,fontWeight:700,
+                      padding:"3px 10px",borderRadius:5,display:"inline-block",whiteSpace:"nowrap"}}>
+                      {order.status}
+                    </span>
+                  </td>
+                  <td style={{padding:"11px 14px",fontSize:13,fontWeight:800,color:C.navy,textAlign:"right",whiteSpace:"nowrap"}}>
+                    {fmt(order.total)}
+                  </td>
+                  <td style={{padding:"11px 14px",textAlign:"right"}} onClick={e=>e.stopPropagation()}>
+                    <div style={{display:"flex",gap:6,justifyContent:"flex-end"}}>
+                      <Btn variant="ghost" sm onClick={()=>onViewOrder(order.id)}>View</Btn>
+                      <Btn variant="primary" sm>Reorder</Btn>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+            {filteredOrders.length===0&&(
+              <tr><td colSpan={8} style={{padding:40,textAlign:"center",color:C.text3,fontSize:13}}>
+                No orders in this category
+              </td></tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );
@@ -2202,32 +2200,12 @@ export default function BuyerApp() {
         </div>
 
         {/* Search bar */}
-        <div style={{flex:1,display:"flex",justifyContent:"center",maxWidth:680}}>
+        <div style={{flex:1,display:"flex",justifyContent:"center",maxWidth:920}}>
           <SearchBar onSearch={handleSearch} onProductSelect={handleProductSelect}/>
         </div>
 
-        {/* Nav links + right actions */}
-        <div style={{display:"flex",alignItems:"center",gap:4,flexShrink:0}}>
-          {[
-            {label:"Home",        action:()=>{setScreen("home");setSearchQ("");},  id:"home"},
-            {label:"Best Deals",  action:()=>handleSearch("deal"),                id:"deals"},
-            {label:"Trending",    action:()=>handleSearch("trending"),            id:"trending"},
-            {label:"My Orders",   action:()=>setScreen("orders"),                 id:"orders"},
-            {label:"Invoices",    action:()=>setScreen("invoices"),               id:"invoices"},
-          ].map(item=>(
-            <button key={item.id} onClick={item.action}
-              style={{background:"none",border:"none",cursor:"pointer",
-                fontSize:12,fontWeight:screen===item.id?700:500,
-                color:screen===item.id?C.navy:C.text2,
-                padding:"8px 10px",borderRadius:6,transition:"all .15s",
-                borderBottom:screen===item.id?`2px solid ${C.teal}`:"2px solid transparent",
-                borderTop:"2px solid transparent"}}
-              onMouseEnter={e=>{if(screen!==item.id)e.currentTarget.style.color=C.navy}}
-              onMouseLeave={e=>{if(screen!==item.id)e.currentTarget.style.color=C.text2}}>
-              {item.label}
-            </button>
-          ))}
-          <div style={{width:1,height:20,background:C.border,margin:"0 4px"}}/>
+        {/* Right actions */}
+        <div style={{display:"flex",alignItems:"center",gap:8,flexShrink:0}}>
           <button onClick={()=>setShowCart(v=>!v)} style={{
             position:"relative",background:showCart?C.teal:C.white,
             border:`2px solid ${showCart?C.teal:C.border}`,borderRadius:8,
