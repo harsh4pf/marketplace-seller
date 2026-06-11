@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import BuyerApp from "./BuyerApp";
 
 const T = {
   navy:"#0A2342", navy2:"#0D2D54", teal:"#028090", teal2:"#02A0B0",
@@ -622,6 +623,10 @@ function Inventory() {
 }
 
 export default function App() {
+  return <BuyerApp />;
+}
+
+function SellerApp() {
   const [view,    setView]    = useState("overview");
   const [orders,  setOrders]  = useState(INIT_ORDERS);
   const [selOrder,setSelOrder]= useState(null);
@@ -695,9 +700,26 @@ export default function App() {
             alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:800,color:T.white}}>FM</div>
           <span style={{fontSize:13,fontWeight:700,color:T.white}}>seller.fundlymart.com</span>
         </div>
-        <div style={{display:"flex",alignItems:"center",gap:6,fontSize:12,color:"rgba(255,255,255,.55)"}}>
-          <div style={{width:7,height:7,borderRadius:"50%",background:T.mint}}/>
-          Joth Pharma Pvt. Ltd. · Mumbai · Wholesale DL · Active
+        <div style={{display:"flex",alignItems:"center",gap:12}}>
+          <div style={{display:"flex",alignItems:"center",gap:8}}>
+            <span style={{color:"rgba(255,255,255,.5)",fontSize:12}}>View:</span>
+            <button onClick={()=>setAppMode("seller")} style={{
+              background:appMode==="seller"?T.teal:"transparent",
+              color:appMode==="seller"?"#fff":"rgba(255,255,255,.6)",
+              border:appMode==="seller"?"1px solid "+T.teal:"1px solid rgba(255,255,255,.2)",
+              padding:"5px 12px",borderRadius:6,fontSize:11,fontWeight:600,cursor:"pointer"
+            }}>Seller</button>
+            <button onClick={()=>setAppMode("buyer")} style={{
+              background:appMode==="buyer"?T.teal:"transparent",
+              color:appMode==="buyer"?"#fff":"rgba(255,255,255,.6)",
+              border:appMode==="buyer"?"1px solid "+T.teal:"1px solid rgba(255,255,255,.2)",
+              padding:"5px 12px",borderRadius:6,fontSize:11,fontWeight:600,cursor:"pointer"
+            }}>Buyer</button>
+          </div>
+          <div style={{display:"flex",alignItems:"center",gap:6,fontSize:12,color:"rgba(255,255,255,.55)",paddingLeft:12,borderLeft:"1px solid rgba(255,255,255,.1)"}}>
+            <div style={{width:7,height:7,borderRadius:"50%",background:T.mint}}/>
+            Joth Pharma Pvt. Ltd. · Mumbai · Wholesale DL · Active
+          </div>
         </div>
         <div style={{display:"flex",alignItems:"center",gap:14}}>
           <div onClick={()=>navSetView("orders")} style={{position:"relative",cursor:"pointer",
