@@ -263,6 +263,8 @@ const SELLER_SCHEMES = {
 };
 
 const CATEGORIES = [
+  {id:"generic",         label:"Generics",         icon:"💚", count:PRODUCTS.filter(p=>p.type!=='branded').length},
+  {id:"branded",         label:"Branded",          icon:"💙", count:PRODUCTS.filter(p=>p.type==='branded').length},
   {id:"cardiology",      label:"Cardiology",       icon:"🫀", count:142},
   {id:"diabetology",     label:"Diabetology",      icon:"🩸", count:98},
   {id:"anti-infectives", label:"Anti-infectives",  icon:"🦠", count:215},
@@ -271,8 +273,6 @@ const CATEGORIES = [
   {id:"respiratory",     label:"Respiratory",      icon:"🫁", count:76},
   {id:"otc",             label:"OTC",              icon:"💊", count:312},
   {id:"ayurvedic",       label:"Ayurvedic",        icon:"🌿", count:64},
-  {id:"generic",         label:"Generics",         icon:"💚", count:PRODUCTS.filter(p=>p.type!=='branded').length},
-  {id:"branded",         label:"Branded",          icon:"💙", count:PRODUCTS.filter(p=>p.type==='branded').length},
 ];
 
 const SUGGEST_BRANDS = ["Glycomet","Augmentin","Crocin","Atorvastatin","Pantocid","Amlokind","Azithral","Dolo","Metformin","Amoxicillin","Paracetamol","Pantoprazole"];
@@ -621,14 +621,14 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
           <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:8}}>
             {CATEGORIES.map(cat=>(
               <div key={cat.id} onClick={()=>onSearch(cat.label)} style={{
-                background:C.white,border:`1px solid ${C.border}`,borderRadius:10,
-                padding:"12px 8px",textAlign:"center",cursor:"pointer",
+                background:C.white,border:`1px solid ${C.border}`,borderRadius:8,
+                padding:"8px 6px",textAlign:"center",cursor:"pointer",
                 transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor=C.teal;e.currentTarget.style.background=C.bg}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor=C.border;e.currentTarget.style.background=C.white}}>
-                <div style={{fontSize:22,marginBottom:6}}>{cat.icon}</div>
-                <div style={{fontSize:11,fontWeight:600,color:C.text,marginBottom:2}}>{cat.label}</div>
-                <div style={{fontSize:10,color:C.text3}}>{cat.count} products</div>
+                <div style={{fontSize:18,marginBottom:4}}>{cat.icon}</div>
+                <div style={{fontSize:11,fontWeight:600,color:C.text,marginBottom:1}}>{cat.label}</div>
+                <div style={{fontSize:9,color:C.text3}}>{cat.count} products</div>
               </div>
             ))}
           </div>
