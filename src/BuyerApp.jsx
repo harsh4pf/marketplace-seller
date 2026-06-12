@@ -23,6 +23,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:32.40, mrp:42.50, img:"💊", category:"Diabetology", sub:"Biguanides",
     tag:"bestseller",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:28.51,disc:12,stock:580,exp:"Sep 2027",del:"1 day",rating:4.8,reviews:142},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:29.81,disc:8, stock:400,exp:"Dec 2026",del:"2 days",rating:4.5,reviews:89},
@@ -32,6 +33,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 6", sched:"H", hsn:"30041020", gst:12,
     ptr:89.00, mrp:116.00, img:"💊", category:"Anti-infectives", sub:"Penicillins",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:81.42,disc:9,stock:200,exp:"Sep 2027",del:"1 day",rating:4.8,reviews:142},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:83.16,disc:7,stock:150,exp:"Jun 2027",del:"1 day",rating:4.6,reviews:54},
@@ -40,6 +42,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"OTC", hsn:"30049099", gst:12,
     ptr:18.20, mrp:24.00, img:"💊", category:"OTC", sub:"Analgesics",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:17.11,disc:6,stock:2200,exp:"Dec 2026",del:"2 days",rating:4.5,reviews:89},
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:17.47,disc:4,stock:800, exp:"Mar 2027",del:"1 day",rating:4.7,reviews:203},
@@ -48,6 +51,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:42.00, mrp:55.00, img:"💊", category:"Cardiology", sub:"Statins",
     tag:"bestseller",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:35.70,disc:15,stock:340,exp:"Jun 2027",del:"1 day",rating:4.8,reviews:142},
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:37.38,disc:11,stock:600,exp:"Aug 2027",del:"3 days",rating:4.2,reviews:67},
@@ -56,6 +60,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"H", hsn:"30049099", gst:12,
     ptr:68.00, mrp:90.00, img:"💊", category:"Gastroenterology", sub:"PPIs",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:58.48,disc:14,stock:450,exp:"Nov 2027",del:"1 day",rating:4.6,reviews:54},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:61.20,disc:10,stock:300,exp:"Jul 2027",del:"2 days",rating:4.5,reviews:89},
@@ -64,6 +69,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"H", hsn:"30049099", gst:12,
     ptr:52.00, mrp:68.00, img:"💊", category:"Cardiology", sub:"Antihypertensives",
     tag:"deal",
+    type:"generic",
     sellers:[
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:44.20,disc:15,stock:800,exp:"Jan 2028",del:"3 days",rating:4.2,reviews:67},
     ]},
@@ -71,6 +77,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 3", sched:"H", hsn:"30041020", gst:12,
     ptr:96.00, mrp:128.00, img:"💊", category:"Anti-infectives", sub:"Macrolides",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:81.60,disc:15,stock:500,exp:"Oct 2027",del:"1 day",rating:4.7,reviews:203},
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:86.40,disc:10,stock:200,exp:"Jun 2027",del:"1 day",rating:4.8,reviews:142},
@@ -79,6 +86,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"OTC", hsn:"30049099", gst:12,
     ptr:22.00, mrp:30.00, img:"💊", category:"OTC", sub:"Analgesics",
     tag:"deal",
+    type:"generic",
     sellers:[
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:19.36,disc:12,stock:3000,exp:"Feb 2028",del:"2 days",rating:4.5,reviews:89},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:19.80,disc:10,stock:1500,exp:"Apr 2028",del:"1 day",rating:4.6,reviews:54},
@@ -87,6 +95,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"H", hsn:"30049099", gst:12,
     ptr:78.00, mrp:102.00, img:"💊", category:"Cardiology", sub:"ARBs",
     tag:"bestseller",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:66.30,disc:15,stock:420,exp:"Aug 2027",del:"1 day",rating:4.8,reviews:142},
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:70.20,disc:10,stock:350,exp:"Nov 2027",del:"3 days",rating:4.2,reviews:67},
@@ -95,6 +104,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 14", sched:"H", hsn:"30049099", gst:12,
     ptr:12.50, mrp:16.00, img:"💊", category:"Cardiology", sub:"Antiplatelets",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:10.75,disc:14,stock:1800,exp:"May 2028",del:"2 days",rating:4.5,reviews:89},
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:11.25,disc:10,stock:900, exp:"Jul 2028",del:"1 day",rating:4.7,reviews:203},
@@ -103,6 +113,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:24.00, mrp:32.00, img:"💊", category:"CNS", sub:"Corticosteroids",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:20.40,disc:15,stock:280,exp:"Dec 2027",del:"1 day",rating:4.6,reviews:54},
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:21.60,disc:10,stock:150,exp:"Sep 2027",del:"1 day",rating:4.8,reviews:142},
@@ -111,6 +122,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:86.00, mrp:112.00, img:"💊", category:"Respiratory", sub:"Anti-allergics",
     tag:"bestseller",
+    type:"branded",
     sellers:[
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:73.10,disc:15,stock:520,exp:"Oct 2027",del:"3 days",rating:4.2,reviews:67},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:77.40,disc:10,stock:380,exp:"Jan 2028",del:"2 days",rating:4.5,reviews:89},
@@ -119,6 +131,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"H", hsn:"30049099", gst:12,
     ptr:54.00, mrp:72.00, img:"💊", category:"Gastroenterology", sub:"PPIs",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:45.90,disc:15,stock:650,exp:"Jun 2028",del:"1 day",rating:4.7,reviews:203},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:48.60,disc:10,stock:420,exp:"Mar 2028",del:"1 day",rating:4.6,reviews:54},
@@ -127,6 +140,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"OTC", hsn:"30049099", gst:12,
     ptr:38.00, mrp:50.00, img:"💊", category:"OTC", sub:"Supplements",
     tag:"trending",
+    type:"generic",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:32.30,disc:15,stock:720,exp:"Dec 2027",del:"1 day",rating:4.8,reviews:142},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:34.20,disc:10,stock:580,exp:"Feb 2028",del:"2 days",rating:4.5,reviews:89},
@@ -135,6 +149,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 15", sched:"OTC", hsn:"30049099", gst:12,
     ptr:28.00, mrp:36.00, img:"💊", category:"OTC", sub:"Vitamins",
     tag:"bestseller",
+    type:"generic",
     sellers:[
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:23.80,disc:15,stock:940,exp:"Aug 2028",del:"3 days",rating:4.2,reviews:67},
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:25.20,disc:10,stock:680,exp:"Nov 2028",del:"1 day",rating:4.7,reviews:203},
@@ -143,6 +158,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:14.00, mrp:18.00, img:"💊", category:"Respiratory", sub:"Antihistamines",
     tag:"deal",
+    type:"generic",
     sellers:[
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:11.90,disc:15,stock:1600,exp:"Apr 2028",del:"2 days",rating:4.5,reviews:89},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:12.60,disc:10,stock:1200,exp:"Jun 2028",del:"1 day",rating:4.6,reviews:54},
@@ -151,6 +167,7 @@ const PRODUCTS = [
     form:"Respule", pack:"Box of 30", sched:"H", hsn:"30049099", gst:12,
     ptr:165.00, mrp:215.00, img:"💊", category:"Respiratory", sub:"Bronchodilators",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:140.25,disc:15,stock:220,exp:"Aug 2028",del:"1 day",rating:4.8,reviews:142},
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:148.50,disc:10,stock:180,exp:"Oct 2028",del:"3 days",rating:4.2,reviews:67},
@@ -159,6 +176,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:24.50, mrp:32.00, img:"💊", category:"Diabetology", sub:"Sulfonylureas",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:20.83,disc:15,stock:420,exp:"Sep 2028",del:"1 day",rating:4.7,reviews:203},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:22.05,disc:10,stock:350,exp:"Dec 2028",del:"2 days",rating:4.5,reviews:89},
@@ -167,6 +185,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:32.00, mrp:42.00, img:"💊", category:"Cardiology", sub:"Beta Blockers",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:27.20,disc:15,stock:290,exp:"Jul 2028",del:"1 day",rating:4.6,reviews:54},
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:28.80,disc:10,stock:240,exp:"Nov 2028",del:"1 day",rating:4.8,reviews:142},
@@ -175,6 +194,7 @@ const PRODUCTS = [
     form:"Capsule", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:78.00, mrp:102.00, img:"💊", category:"Gastroenterology", sub:"PPI + Prokinetic",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:66.30,disc:15,stock:380,exp:"Jan 2029",del:"3 days",rating:4.2,reviews:67},
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:70.20,disc:10,stock:310,exp:"Mar 2029",del:"1 day",rating:4.7,reviews:203},
@@ -183,6 +203,7 @@ const PRODUCTS = [
     form:"Capsule", pack:"Strip of 6", sched:"H", hsn:"30041020", gst:12,
     ptr:48.00, mrp:62.00, img:"💊", category:"Anti-infectives", sub:"Penicillins",
     tag:"trending",
+    type:"generic",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:40.80,disc:15,stock:500,exp:"Aug 2028",del:"1 day",rating:4.8,reviews:142},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:43.20,disc:10,stock:400,exp:"Dec 2028",del:"2 days",rating:4.5,reviews:89},
@@ -191,6 +212,7 @@ const PRODUCTS = [
     form:"Inhaler", pack:"1 inhaler", sched:"H", hsn:"30049099", gst:12,
     ptr:285.00, mrp:365.00, img:"💊", category:"Respiratory", sub:"ICS + LABA",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:242.25,disc:15,stock:180,exp:"Jul 2028",del:"1 day",rating:4.6,reviews:54},
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:256.50,disc:10,stock:150,exp:"Oct 2028",del:"3 days",rating:4.2,reviews:67},
@@ -199,6 +221,7 @@ const PRODUCTS = [
     form:"Injection", pack:"1 pen (3ml)", sched:"H", hsn:"30049099", gst:12,
     ptr:520.00, mrp:650.00, img:"💊", category:"Diabetology", sub:"Basal Insulin",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:442.00,disc:15,stock:200,exp:"Jan 2029",del:"1 day",rating:4.7,reviews:203},
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:468.00,disc:10,stock:160,exp:"Apr 2029",del:"1 day",rating:4.8,reviews:142},
@@ -207,6 +230,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:55.00, mrp:72.00, img:"💊", category:"Diabetology", sub:"Sulfonylureas",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:46.75,disc:15,stock:350,exp:"Sep 2028",del:"2 days",rating:4.5,reviews:89},
       {id:"s4",firm:"CityMeds",   city:"Thane", netrate:49.50,disc:10,stock:280,exp:"Nov 2028",del:"1 day",rating:4.6,reviews:54},
@@ -215,6 +239,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:18.50, mrp:24.00, img:"💊", category:"CNS", sub:"Corticosteroids",
     tag:"trending",
+    type:"branded",
     sellers:[
       {id:"s1",firm:"Joth Pharma",city:"Mumbai",netrate:15.73,disc:15,stock:600,exp:"Jun 2028",del:"1 day",rating:4.8,reviews:142},
       {id:"s3",firm:"PharmaDepot",city:"Delhi", netrate:16.65,disc:10,stock:500,exp:"Aug 2028",del:"3 days",rating:4.2,reviews:67},
@@ -223,6 +248,7 @@ const PRODUCTS = [
     form:"Tablet", pack:"Strip of 10", sched:"H", hsn:"30049099", gst:12,
     ptr:12.00, mrp:16.00, img:"💊", category:"Respiratory", sub:"Bronchodilators",
     tag:"deal",
+    type:"branded",
     sellers:[
       {id:"s5",firm:"Apollo Dist",city:"Mumbai",netrate:10.20,disc:15,stock:1200,exp:"Jul 2028",del:"1 day",rating:4.7,reviews:203},
       {id:"s2",firm:"MedStock",   city:"Pune",  netrate:10.80,disc:10,stock:900,exp:"Sep 2028",del:"2 days",rating:4.5,reviews:89},
@@ -331,6 +357,13 @@ function ProductCard({product,onClick,onAddToCart}) {
           <SchedBadge sched={product.sched}/>
           <span style={{fontSize:8,color:C.text3}}>•</span>
           <span style={{fontSize:8,color:C.text2,fontWeight:500}}>{product.pack}</span>
+          <span style={{fontSize:8,color:C.text3}}>•</span>
+          <span style={{fontSize:8,fontWeight:600,
+            color:product.type==="branded"?"#16558B":C.green,
+            background:product.type==="branded"?"#DBEAFE":"#D1FAE5",
+            padding:"1px 5px",borderRadius:3}}>
+            {product.type==="branded"?"Branded":"Generic"}
+          </span>
           {tag&&<div style={{background:tag.bg,color:tag.color,fontSize:8,fontWeight:700,
             padding:"2px 5px",borderRadius:3,display:"flex",alignItems:"center",gap:2,marginLeft:"auto"}}>
             <span>{tag.icon}</span>
@@ -773,6 +806,7 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
   const [stockFilter,setStockFilter] = useState("all"); // all, instock, low
   const [mfrFilter,  setMfrFilter]   = useState([]);
   const [deliveryFilter,setDeliveryFilter] = useState([]);
+  const [typeFilter,   setTypeFilter]    = useState("all"); // all, branded, generic
   const [sortBy,     setSortBy]      = useState("relevance");
   const [viewMode,   setViewMode]    = useState("grid"); // grid or list
   
@@ -787,7 +821,8 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
       (stockFilter==="low"&&p.sellers[0].stock<=100&&p.sellers[0].stock>0);
     const matchMfr=mfrFilter.length===0||mfrFilter.includes(p.mfr);
     const matchDelivery=deliveryFilter.length===0||deliveryFilter.some(d=>p.sellers[0].del.includes(d));
-    return matchQ&&matchSched&&matchCat&&matchPrice&&matchStock&&matchMfr&&matchDelivery;
+    const matchType=typeFilter==="all"||p.type===typeFilter;
+    return matchQ&&matchSched&&matchCat&&matchPrice&&matchStock&&matchMfr&&matchDelivery&&matchType;
   }).sort((a,b)=>{
     if(sortBy==="relevance") return 0;
     if(sortBy==="discount") return b.sellers[0].disc-a.sellers[0].disc;
@@ -809,7 +844,7 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
   const toggleArr=(arr,setArr,val)=>setArr(prev=>prev.includes(val)?prev.filter(x=>x!==val):[...prev,val]);
   
   const activeFilters = schedFilter.length + catFilter.length + mfrFilter.length + deliveryFilter.length + 
-    (stockFilter!=="all"?1:0) + (priceRange[0]>0||priceRange[1]<1000?1:0);
+    (stockFilter!=="all"?1:0) + (priceRange[0]>0||priceRange[1]<1000?1:0) + (typeFilter!=="all"?1:0);
   
   return (
     <div style={{flex:1,display:"flex",overflow:"hidden"}}>
@@ -828,7 +863,7 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
           {activeFilters>0&&(
             <button onClick={()=>{
               setSchedFilter([]);setCatFilter([]);setMfrFilter([]);setDeliveryFilter([]);
-              setStockFilter("all");setPriceRange([0,1000]);
+              setStockFilter("all");setTypeFilter("all");setPriceRange([0,1000]);
             }} style={{fontSize:11,color:C.red,background:"none",border:"none",
               cursor:"pointer",fontWeight:600,textDecoration:"underline"}}>
               Clear all
@@ -836,86 +871,127 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
           )}
         </div>
 
+        {/* Product Type - Branded / Generic */}
+        <div style={{marginBottom:20,padding:"12px",background:C.bg,borderRadius:8,
+          border:`1.5px solid ${typeFilter!=="all"?"#16558B":"transparent"}`}}>
+          <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
+            Product Type
+          </div>
+          <div style={{display:"flex",gap:6}}>
+            {[
+              {val:"all",label:"All"},
+              {val:"branded",label:"Branded"},
+              {val:"generic",label:"Generic"}
+            ].map(opt=>{
+              const active = typeFilter===opt.val;
+              return (
+                <button key={opt.val}
+                  onClick={()=>setTypeFilter(opt.val)}
+                  style={{flex:1,padding:"8px 0",borderRadius:6,fontSize:12,fontWeight:600,
+                    cursor:"pointer",border:"none",transition:"all .15s",
+                    background:active?"#16558B":C.white,
+                    color:active?C.white:C.text,
+                    boxShadow:active?"0 2px 8px rgba(22,85,139,.2)":"0 1px 2px rgba(0,0,0,.04)"}}>
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Stock Availability - Easy for non-tech users */}
         <div style={{marginBottom:20,padding:"12px",background:C.bg,borderRadius:8}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            📦 Stock Availability
+            Stock Availability
           </div>
-          {[
-            {val:"all",label:"All Products",icon:"📋"},
-            {val:"instock",label:"In Stock Only",icon:"✅"},
-            {val:"low",label:"Low Stock Deals",icon:"⚡"}
-          ].map(opt=>(
-            <label key={opt.val} style={{display:"flex",alignItems:"center",gap:8,
-              padding:"8px 10px",borderRadius:6,marginBottom:4,cursor:"pointer",
-              background:stockFilter===opt.val?C.white:"transparent",
-              border:stockFilter===opt.val?`2px solid ${C.teal}`:"2px solid transparent"}}
-              onClick={()=>setStockFilter(opt.val)}>
-              <input type="radio" checked={stockFilter===opt.val}
-                onChange={()=>setStockFilter(opt.val)}
-                style={{accentColor:C.teal,cursor:"pointer"}}/>
-              <span style={{fontSize:14}}>{opt.icon}</span>
-              <span style={{fontSize:12,fontWeight:stockFilter===opt.val?700:500,
-                color:stockFilter===opt.val?C.navy:C.text2}}>
-                {opt.label}
-              </span>
-            </label>
-          ))}
+          <div style={{display:"flex",flexDirection:"column",gap:6}}>
+            {[
+              {val:"all",label:"All Products"},
+              {val:"instock",label:"In Stock Only"},
+              {val:"low",label:"Low Stock Deals"}
+            ].map(opt=>{
+              const active = stockFilter===opt.val;
+              return (
+                <button key={opt.val}
+                  onClick={()=>setStockFilter(opt.val)}
+                  style={{display:"flex",alignItems:"center",gap:8,padding:"8px 10px",
+                    borderRadius:6,cursor:"pointer",border:"none",fontFamily:"inherit",
+                    background:active?"#16558B":C.white,
+                    color:active?C.white:C.text,
+                    boxShadow:active?"0 2px 8px rgba(22,85,139,.15)":"0 1px 2px rgba(0,0,0,.04)",
+                    transition:"all .15s",fontSize:12,fontWeight:active?700:500,
+                    textAlign:"left"}}>
+                  <input type="radio" checked={active}
+                    onChange={()=>setStockFilter(opt.val)}
+                    style={{accentColor:"#16558B",cursor:"pointer"}}/>{" "}
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Price Range - Simple slider */}
         <div style={{marginBottom:20}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            💵 Price Range (per unit)
+            Price Range (per unit)
           </div>
           <div style={{padding:"10px 12px",background:C.bg,borderRadius:6}}>
             <div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}>
-              <span style={{fontSize:12,fontWeight:700,color:C.teal}}>₹{priceRange[0]}</span>
-              <span style={{fontSize:12,fontWeight:700,color:C.teal}}>₹{priceRange[1]}</span>
+              <span style={{fontSize:12,fontWeight:700,color:"#16558B"}}>₹{priceRange[0]}</span>
+              <span style={{fontSize:12,fontWeight:700,color:"#16558B"}}>₹{priceRange[1]}</span>
             </div>
             <input type="range" min="0" max="1000" step="50" value={priceRange[1]}
               onChange={e=>setPriceRange([0,parseInt(e.target.value)])}
-              style={{width:"100%",accentColor:C.teal,cursor:"pointer"}}/>
+              style={{width:"100%",accentColor:"#16558B",cursor:"pointer"}}/>
           </div>
         </div>
 
         {/* Schedule - With descriptions */}
         <div style={{marginBottom:20}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            📋 Drug Schedule
+            Drug Schedule
           </div>
-          {scheds.map(s=>(
-            <label key={s.val} style={{display:"block",padding:"8px 10px",borderRadius:6,
-              marginBottom:4,cursor:"pointer",background:schedFilter.includes(s.val)?C.bg:"transparent"}}
-              onClick={()=>toggleArr(schedFilter,setSchedFilter,s.val)}>
-              <div style={{display:"flex",alignItems:"center",gap:8}}>
+          <div style={{display:"flex",flexDirection:"column",gap:6}}>
+            {scheds.map(s=>(
+              <button key={s.val}
+                onClick={()=>toggleArr(schedFilter,setSchedFilter,s.val)}
+                style={{display:"flex",alignItems:"center",gap:8,padding:"8px 10px",
+                  borderRadius:6,cursor:"pointer",border:"none",fontFamily:"inherit",
+                  background:schedFilter.includes(s.val)?C.bg:"transparent",
+                  transition:"all .15s",textAlign:"left"}}>
                 <input type="checkbox" checked={schedFilter.includes(s.val)}
                   onChange={()=>toggleArr(schedFilter,setSchedFilter,s.val)}
-                  style={{accentColor:C.teal,cursor:"pointer"}}/>
+                  style={{accentColor:"#16558B",cursor:"pointer"}}/>
                 <div style={{flex:1}}>
                   <div style={{fontSize:12,fontWeight:600,color:C.text}}>{s.label}</div>
                   <div style={{fontSize:10,color:C.text3}}>{s.desc}</div>
                 </div>
-              </div>
-            </label>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Category */}
         <div style={{marginBottom:20}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            🏥 Therapeutic Category
+            Therapeutic Category
           </div>
-          <div style={{maxHeight:200,overflowY:"auto"}}>
+          <div style={{maxHeight:200,overflowY:"auto",display:"flex",flexDirection:"column",gap:4}}>
             {cats.map(cat=>(
-              <label key={cat} style={{display:"flex",alignItems:"center",gap:8,
-                padding:"6px 10px",borderRadius:6,marginBottom:3,cursor:"pointer"}}
-                onClick={()=>toggleArr(catFilter,setCatFilter,cat)}>
+              <button key={cat}
+                onClick={()=>toggleArr(catFilter,setCatFilter,cat)}
+                style={{display:"flex",alignItems:"center",gap:8,
+                  padding:"6px 10px",borderRadius:6,cursor:"pointer",border:"none",
+                  fontFamily:"inherit",background:catFilter.includes(cat)?C.bg:"transparent",
+                  transition:"all .15s",textAlign:"left",fontSize:12,color:C.text}}
+                onMouseEnter={e=>e.currentTarget.style.background=C.bg}
+                onMouseLeave={e=>e.currentTarget.style.background=catFilter.includes(cat)?C.bg:"transparent"}>
                 <input type="checkbox" checked={catFilter.includes(cat)}
                   onChange={()=>toggleArr(catFilter,setCatFilter,cat)}
-                  style={{accentColor:C.teal,cursor:"pointer"}}/>
-                <span style={{fontSize:12,color:C.text}}>{cat}</span>
-              </label>
+                  style={{accentColor:"#16558B",cursor:"pointer"}}/>
+                <span>{cat}</span>
+              </button>
             ))}
           </div>
         </div>
@@ -923,35 +999,49 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
         {/* Manufacturer */}
         <div style={{marginBottom:20}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            🏭 Manufacturer
+            Manufacturer
           </div>
-          {mfrs.map(mfr=>(
-            <label key={mfr} style={{display:"flex",alignItems:"center",gap:8,
-              padding:"6px 10px",borderRadius:6,marginBottom:3,cursor:"pointer"}}
-              onClick={()=>toggleArr(mfrFilter,setMfrFilter,mfr)}>
-              <input type="checkbox" checked={mfrFilter.includes(mfr)}
-                onChange={()=>toggleArr(mfrFilter,setMfrFilter,mfr)}
-                style={{accentColor:C.teal,cursor:"pointer"}}/>
-              <span style={{fontSize:12,color:C.text}}>{mfr}</span>
-            </label>
-          ))}
+          <div style={{display:"flex",flexDirection:"column",gap:4}}>
+            {mfrs.map(mfr=>(
+              <button key={mfr}
+                onClick={()=>toggleArr(mfrFilter,setMfrFilter,mfr)}
+                style={{display:"flex",alignItems:"center",gap:8,
+                  padding:"6px 10px",borderRadius:6,cursor:"pointer",border:"none",
+                  fontFamily:"inherit",background:mfrFilter.includes(mfr)?C.bg:"transparent",
+                  transition:"all .15s",textAlign:"left",fontSize:12,color:C.text}}
+                onMouseEnter={e=>e.currentTarget.style.background=C.bg}
+                onMouseLeave={e=>e.currentTarget.style.background=mfrFilter.includes(mfr)?C.bg:"transparent"}>
+                <input type="checkbox" checked={mfrFilter.includes(mfr)}
+                  onChange={()=>toggleArr(mfrFilter,setMfrFilter,mfr)}
+                  style={{accentColor:"#16558B",cursor:"pointer"}}/>
+                <span>{mfr}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Delivery Time */}
         <div style={{marginBottom:20}}>
           <div style={{fontSize:11,fontWeight:700,color:C.text,marginBottom:10}}>
-            🚚 Delivery Time
+            Delivery Time
           </div>
-          {["1 day","2 days","3 days"].map(del=>(
-            <label key={del} style={{display:"flex",alignItems:"center",gap:8,
-              padding:"6px 10px",borderRadius:6,marginBottom:3,cursor:"pointer"}}
-              onClick={()=>toggleArr(deliveryFilter,setDeliveryFilter,del)}>
-              <input type="checkbox" checked={deliveryFilter.includes(del)}
-                onChange={()=>toggleArr(deliveryFilter,setDeliveryFilter,del)}
-                style={{accentColor:C.teal,cursor:"pointer"}}/>
-              <span style={{fontSize:12,color:C.text}}>Within {del}</span>
-            </label>
-          ))}
+          <div style={{display:"flex",flexDirection:"column",gap:4}}>
+            {["1 day","2 days","3 days"].map(del=>(
+              <button key={del}
+                onClick={()=>toggleArr(deliveryFilter,setDeliveryFilter,del)}
+                style={{display:"flex",alignItems:"center",gap:8,
+                  padding:"6px 10px",borderRadius:6,cursor:"pointer",border:"none",
+                  fontFamily:"inherit",background:deliveryFilter.includes(del)?C.bg:"transparent",
+                  transition:"all .15s",textAlign:"left",fontSize:12,color:C.text}}
+                onMouseEnter={e=>e.currentTarget.style.background=C.bg}
+                onMouseLeave={e=>e.currentTarget.style.background=deliveryFilter.includes(del)?C.bg:"transparent"}>
+                <input type="checkbox" checked={deliveryFilter.includes(del)}
+                  onChange={()=>toggleArr(deliveryFilter,setDeliveryFilter,del)}
+                  style={{accentColor:"#16558B",cursor:"pointer"}}/>
+                <span>Within {del}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -971,14 +1061,16 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
             </div>
             <div style={{display:"flex",gap:6}}>
               <button onClick={()=>setViewMode("grid")}
-                style={{width:36,height:36,border:`1.5px solid ${viewMode==="grid"?C.teal:C.border}`,
-                  background:viewMode==="grid"?C.bg:C.white,borderRadius:6,cursor:"pointer",
+                style={{width:36,height:36,border:`1.5px solid ${viewMode==="grid"?"#16558B":C.border}`,
+                  background:viewMode==="grid"?"#EFF6FF":C.white,borderRadius:6,cursor:"pointer",
+                  color:viewMode==="grid"?"#16558B":C.text2,
                   fontSize:16,display:"flex",alignItems:"center",justifyContent:"center"}}>
                 ⊞
               </button>
               <button onClick={()=>setViewMode("list")}
-                style={{width:36,height:36,border:`1.5px solid ${viewMode==="list"?C.teal:C.border}`,
-                  background:viewMode==="list"?C.bg:C.white,borderRadius:6,cursor:"pointer",
+                style={{width:36,height:36,border:`1.5px solid ${viewMode==="list"?"#16558B":C.border}`,
+                  background:viewMode==="list"?"#EFF6FF":C.white,borderRadius:6,cursor:"pointer",
+                  color:viewMode==="list"?"#16558B":C.text2,
                   fontSize:16,display:"flex",alignItems:"center",justifyContent:"center"}}>
                 ☰
               </button>
@@ -998,9 +1090,9 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
             ].map(([v,l])=>(
               <button key={v} onClick={()=>setSortBy(v)} style={{
                 height:34,padding:"0 14px",borderRadius:8,fontSize:12,fontWeight:600,cursor:"pointer",
-                background:sortBy===v?C.teal:C.white,color:sortBy===v?C.white:C.text2,
-                border:`1.5px solid ${sortBy===v?C.teal:C.border}`,transition:"all .15s"}}
-                onMouseEnter={e=>{if(sortBy!==v)e.currentTarget.style.borderColor=C.teal}}
+                background:sortBy===v?"#16558B":C.white,color:sortBy===v?C.white:C.text2,
+                border:`1.5px solid ${sortBy===v?"#16558B":C.border}`,transition:"all .15s"}}
+                onMouseEnter={e=>{if(sortBy!==v)e.currentTarget.style.borderColor="#16558B"}}
                 onMouseLeave={e=>{if(sortBy!==v)e.currentTarget.style.borderColor=C.border}}>
                 {l}
               </button>
@@ -1019,7 +1111,7 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
             </div>
             <Btn variant="primary" onClick={()=>{
               setSchedFilter([]);setCatFilter([]);setMfrFilter([]);setDeliveryFilter([]);
-              setStockFilter("all");setPriceRange([0,1000]);
+              setStockFilter("all");setTypeFilter("all");setPriceRange([0,1000]);
             }}>Clear All Filters</Btn>
           </div>
         ):viewMode==="grid"?(
@@ -1056,6 +1148,13 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
                       <span style={{fontSize:10,color:C.text3}}>•</span>
                       <span style={{fontSize:10,color:C.text3}}>{p.pack}</span>
                       <span style={{fontSize:10,color:C.text3}}>•</span>
+                      <span style={{fontSize:10,fontWeight:600,
+                        color:p.type==="branded"?"#16558B":C.green,
+                        background:p.type==="branded"?"#DBEAFE":"#D1FAE5",
+                        padding:"1px 5px",borderRadius:3}}>
+                        {p.type==="branded"?"Branded":"Generic"}
+                      </span>
+                      <span style={{fontSize:10,color:C.text3}}>•</span>
                       <span style={{fontSize:10,color:C.text2}}>{best.firm}</span>
                     </div>
                   </div>
@@ -1084,8 +1183,298 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
   );
 }
 
+// ── SUBSTITUTE PRODUCTS DATA (mock — included for standalone use) ────────────
+const SUBSTITUTE_MOCK_PRODUCTS = [
+  {
+    id: 2, name: "Glucophage 500mg", mol: "Metformin HCl 500mg",
+    molecule_id: "mol_metformin_hcl_500mg", form: "Tablet", strength: "500mg",
+    mfr: "Merck Ltd", sched: "H", product_type: "branded_generic",
+    category: "Diabetology", ptr: 35.10,
+    sellers: [{ netrate: 29.81, disc: 8, stock: 400, del: "2 days",
+      rating: 4.5, firm: "MedStock", city: "Pune" }]
+  },
+  {
+    id: 3, name: "Metformin 500mg", mol: "Metformin HCl 500mg",
+    molecule_id: "mol_metformin_hcl_500mg", form: "Tablet", strength: "500mg",
+    mfr: "Cipla Ltd", sched: "H", product_type: "generic",
+    category: "Diabetology", ptr: 10.80,
+    sellers: [{ netrate: 8.40, disc: 15, stock: 1200, del: "1 day",
+      rating: 4.6, firm: "CityMeds", city: "Thane" },
+      { netrate: 9.18, disc: 10, stock: 800, del: "2 days",
+      rating: 4.3, firm: "PharmaDepot", city: "Delhi" }]
+  },
+  {
+    id: 4, name: "Glycomet 850mg", mol: "Metformin HCl 850mg",
+    molecule_id: "mol_metformin_hcl_850mg", form: "Tablet", strength: "850mg",
+    mfr: "USV Pvt Ltd", sched: "H", product_type: "branded_ethical",
+    category: "Diabetology", ptr: 48.60,
+    sellers: [{ netrate: 42.77, disc: 12, stock: 300, del: "1 day",
+      rating: 4.8, firm: "Joth Pharma", city: "Mumbai" }]
+  },
+  {
+    id: 5, name: "Januvia 50mg", mol: "Sitagliptin 50mg",
+    molecule_id: "mol_sitagliptin_50mg", form: "Tablet", strength: "50mg",
+    mfr: "MSD", sched: "H", product_type: "branded_ethical",
+    category: "Diabetology", ptr: 312.00,
+    sellers: [{ netrate: 280.80, disc: 10, stock: 150, del: "2 days",
+      rating: 4.7, firm: "Apollo Dist", city: "Mumbai" }]
+  }
+];
+
+// ── SUBSTITUTES SECTION ───────────────────────────────────────────────────────
+function SubstitutesSection({ currentProduct, allProducts, onViewProduct }) {
+
+  // Derive missing fields from mol if not present (backward-compat with existing data)
+  const deriveMolId = (p) => {
+    if (p.molecule_id) return p.molecule_id;
+    const base = p.mol.replace(/\s+\d+.*$/, "").trim().toLowerCase().replace(/[^a-z0-9]/g, "_");
+    const str = (p.strength || deriveStrength(p)).replace(/[^a-z0-9]/g, "");
+    return `mol_${base}_${str}`;
+  };
+  const deriveStrength = (p) => {
+    if (p.strength) return p.strength;
+    const m = p.mol.match(/(\d+(?:\.\d+)?(?:mg|mcg|IU|ml|g|%))/);
+    return m ? m[1] : "N/A";
+  };
+
+  const cur = {
+    ...currentProduct,
+    molecule_id: deriveMolId(currentProduct),
+    strength: deriveStrength(currentProduct),
+  };
+
+  const bestRate = (p) => Math.min(...(p.sellers || []).map((s) => s.netrate));
+  const hasSellers = (p) => (p.sellers || []).length > 0;
+
+  // ── Level 1: Direct substitutes ──
+  const l1 = (allProducts || [])
+    .filter(
+      (p) =>
+        deriveMolId(p) === cur.molecule_id &&
+        (!cur.form || !p.form || (p.form || "") === (cur.form || "")) &&
+        deriveStrength(p) === cur.strength &&
+        p.id !== cur.id &&
+        hasSellers(p)
+    )
+    .sort((a, b) => bestRate(a) - bestRate(b));
+
+  // ── Level 2: Other strengths ──
+  const baseMolCur = cur.mol.replace(/\s+\d+.*$/, "").trim();
+  const l2 = (allProducts || [])
+    .filter(
+      (p) =>
+        p.id !== cur.id &&
+        (p.mol || "").includes(baseMolCur) &&
+        ((p.form || "") !== (cur.form || "") || deriveStrength(p) !== cur.strength)
+    )
+    .sort((a, b) => {
+      const sa = parseFloat((deriveStrength(a).match(/[\d.]+/) || ["0"])[0]);
+      const sb = parseFloat((deriveStrength(b).match(/[\d.]+/) || ["0"])[0]);
+      return sa - sb;
+    });
+
+  // ── Level 3: Same class ──
+  const l3 = (allProducts || [])
+    .filter(
+      (p) =>
+        p.id !== cur.id &&
+        (p.category || "") === (cur.category || "") &&
+        deriveMolId(p) !== cur.molecule_id
+    )
+    .sort((a, b) => bestRate(a) - bestRate(b));
+
+  // Badge styles
+  const typeBadge = (t) => {
+    const map = {
+      generic: { bg: "#DCFCE7", color: "#14532D", label: "Generic" },
+      branded_generic: { bg: "#EFF6FF", color: "#185FA5", label: "Branded generic" },
+      branded_ethical: { bg: "#F1F5F9", color: "#0A2342", label: "Branded" },
+    };
+    const s = map[t] || map.generic;
+    return (
+      <span
+        style={{
+          fontSize: 10,
+          fontWeight: 700,
+          background: s.bg,
+          color: s.color,
+          padding: "2px 8px",
+          borderRadius: 12,
+          display: "inline-block",
+        }}
+      >
+        {s.label}
+      </span>
+    );
+  };
+
+  const fmtN = (n) =>
+    "₹" + Number(n).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  const SchedDot = ({ sched }) => (
+    <span
+      style={{
+        fontSize: 9,
+        fontWeight: 700,
+        padding: "2px 6px",
+        borderRadius: 4,
+        background: sched === "OTC" ? "#D1FAE5" : "#FEF3C7",
+        color: sched === "OTC" ? "#14532D" : "#92400E",
+      }}
+    >
+      Sch {sched}
+    </span>
+  );
+
+  const savingsPct = (p, rate) => ((p.ptr - rate) / p.ptr * 100).toFixed(0);
+
+  const RowL1 = ({ p }) => {
+    const rate = bestRate(p);
+    const sc = (p.sellers || []).length;
+    return (
+      <tr
+        key={p.id}
+        onClick={() => onViewProduct && onViewProduct(p)}
+        style={{ cursor: "pointer", transition: "background .12s" }}
+        onMouseEnter={e => e.currentTarget.style.background = "#F8FAFC"}
+        onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+      >
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9" }}>
+          <div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: "#0A2342" }}>{p.name}</div>
+            <div style={{ fontSize: 10, color: "#94A3B8", marginTop: 2 }}>{p.mfr}</div>
+          </div>
+        </td>
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9", whiteSpace: "nowrap", verticalAlign: "middle" }}>
+          {typeBadge(p.product_type || "generic")}
+        </td>
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9", whiteSpace: "nowrap", textAlign: "center", verticalAlign: "middle" }}>
+          <SchedDot sched={p.sched} />
+        </td>
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9", textAlign: "center", whiteSpace: "nowrap", verticalAlign: "middle", fontSize: 12, fontWeight: 600, color: "#475569" }}>
+          {sc}
+        </td>
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9", textAlign: "right", whiteSpace: "nowrap", verticalAlign: "middle" }}>
+          <div style={{ fontSize: 15, fontWeight: 800, color: "#0A2342" }}>{fmtN(rate)}</div>
+          <div style={{ fontSize: 10, color: "#059669", fontWeight: 600, marginTop: 1 }}>Save {savingsPct(p, rate)}%</div>
+        </td>
+        <td style={{ padding: "10px 16px", borderBottom: "1px solid #F1F5F9", textAlign: "right", whiteSpace: "nowrap", verticalAlign: "middle" }}>
+          <button
+            onClick={e => { e.stopPropagation(); onViewProduct && onViewProduct(p); }}
+            style={{ fontSize: 11, fontWeight: 700, color: "#FFFFFF", background: "#16558B", border: "none", borderRadius: 20, padding: "5px 14px", cursor: "pointer", transition: "all .12s", boxShadow: "0 1px 2px rgba(22,85,139,.2)" }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#0D3D66"; e.currentTarget.style.boxShadow = "0 2px 6px rgba(22,85,139,.3)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "#16558B"; e.currentTarget.style.boxShadow = "0 1px 2px rgba(22,85,139,.2)"; }}
+          >
+            View
+          </button>
+        </td>
+      </tr>
+    );
+  };
+
+
+  return (
+    <div style={{ marginTop: 16, background: "#FFFFFF", border: "1px solid #E2E8F0", borderRadius: 12, overflow: "hidden" }}>
+      {/* Header */}
+      <div style={{ padding: "12px 16px", borderBottom: "1px solid #E2E8F0", background: "#F8FAFC", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div>
+          <span style={{ fontSize: 13, fontWeight: 700, color: "#0A2342" }}>Substitutes</span>
+          <span style={{ fontSize: 11, color: "#94A3B8", marginLeft: 8 }}>{cur.mol} · {cur.form || ""} · {cur.strength}</span>
+        </div>
+        {l1.length > 0 && (
+          <span style={{ fontSize: 10, fontWeight: 600, color: "#94A3B8", background: "#F1F5F9", padding: "2px 8px", borderRadius: 10 }}>
+            {l1.length} option{l1.length > 1 ? "s" : ""}
+          </span>
+        )}
+      </div>
+
+      {/* L1 Table */}
+      {l1.length === 0 ? (
+        <div style={{ padding: "14px 16px", fontSize: 12, color: "#94A3B8" }}>
+          No direct substitutes available — this is the only listed product for this molecule, strength, and form.
+        </div>
+      ) : (
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, minWidth: 560 }}>
+            <thead>
+              <tr style={{ background: "#F8FAFC" }}>
+                {["Product", "Type", "Schedule", "Sellers", "Starting Price", ""].map((h, i) => (
+                  <th key={h} style={{ padding: "6px 16px", fontSize: 9, fontWeight: 700, color: "#94A3B8", textAlign: i >= 3 ? "right" : "left", textTransform: "uppercase", letterSpacing: ".04em", whiteSpace: "nowrap" }}>
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {l1.map(p => <RowL1 key={p.id} p={p} />)}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* ── L2: Other strengths ── */}
+      {l2.length > 0 && (
+        <div style={{ borderTop: "2px solid #E2E8F0" }}>
+          <div style={{ padding: "8px 16px", background: "#F0F9FF", borderBottom: "1px solid #E0F2FE", display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ fontSize: 11, fontWeight: 700, color: "#185FA5" }}>Other strengths of {baseMolCur}</span>
+            <span style={{ fontSize: 10, fontWeight: 600, color: "#185FA5", background: "#E0F2FE", padding: "1px 7px", borderRadius: 10 }}>{l2.length}</span>
+          </div>
+          <div style={{ padding: "4px 16px 12px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {l2.map(p => (
+              <div key={p.id} onClick={() => onViewProduct && onViewProduct(p)}
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", borderBottom: "1px solid #F1F5F9", cursor: "pointer" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: "#0F172A" }}>{p.name}</span>
+                  <span style={{ fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: "#E0F2FE", color: "#185FA5" }}>{deriveStrength(p)}</span>
+                  <span style={{ fontSize: 11, color: "#94A3B8" }}>{p.form}</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: "#028090" }}>{fmtN(bestRate(p))}</span>
+                  <span style={{ fontSize: 10, fontWeight: 600, color: "#16558B", textDecoration: "underline" }}>View</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── L3: Same class ── */}
+      {l3.length > 0 && (
+        <div style={{ borderTop: "2px solid #E2E8F0" }}>
+          <div style={{ padding: "8px 16px", background: "#FFF7ED", borderBottom: "1px solid #FED7AA", display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ fontSize: 11, fontWeight: 700, color: "#9A3412" }}>Other {cur.category || ""} products</span>
+            <span style={{ fontSize: 10, fontWeight: 600, color: "#9A3412", background: "#FED7AA", padding: "1px 7px", borderRadius: 10 }}>{l3.length}</span>
+          </div>
+          <div style={{ padding: "4px 16px 12px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {l3.map(p => (
+              <div key={p.id} onClick={() => onViewProduct && onViewProduct(p)}
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 0", borderBottom: "1px solid #F1F5F9", cursor: "pointer" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: "#0F172A" }}>{p.name}</span>
+                  <span style={{ fontSize: 9, fontWeight: 700, padding: "1px 5px", borderRadius: 3, background: "#F1F5F9", color: "#475569" }}>{p.mol}</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: "#028090" }}>{fmtN(bestRate(p))}</span>
+                  <span style={{ fontSize: 10, fontWeight: 600, color: "#16558B", textDecoration: "underline" }}>View</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{ padding: "6px 0 2px", fontSize: 10, color: "#94A3B8", fontStyle: "italic" }}>
+            Different molecule — clinical decision, not a direct substitute
+          </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── PRODUCT DETAIL PAGE ───────────────────────────────────────────────────────
-function ProductPage({product,onBack,onAddToCart,cart}) {
+function ProductPage({product,onBack,onAddToCart,cart,onProductSelect}) {
   const [selSeller,setSelSeller] = useState(0);
   const [quantities,setQuantities] = useState(product.sellers.map(()=>10));
   return (
@@ -1279,6 +1668,13 @@ function ProductPage({product,onBack,onAddToCart,cart}) {
           </div>
         </div>
       </div>
+
+      {/* Substitutes */}
+      <SubstitutesSection
+        currentProduct={product}
+        allProducts={[...PRODUCTS, ...SUBSTITUTE_MOCK_PRODUCTS]}
+        onViewProduct={onProductSelect}
+      />
     </div>
   );
 }
@@ -2432,7 +2828,8 @@ export default function BuyerApp() {
           )}
           {screen==="pdp"&&activeProduct&&(
             <ProductPage product={activeProduct} onBack={()=>setScreen("results")}
-              onAddToCart={handleAddToCart} cart={cart}/>
+              onAddToCart={handleAddToCart} cart={cart}
+              onProductSelect={handleProductSelect}/>
           )}
           {screen==="confirmed"&&(
             <OrderConfirmed cart={cart} onDone={handleDone} onTrackOrders={()=>{handleDone();setScreen("orders");}}/>
