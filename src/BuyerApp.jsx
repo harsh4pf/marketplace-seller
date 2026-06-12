@@ -271,6 +271,8 @@ const CATEGORIES = [
   {id:"respiratory",     label:"Respiratory",      icon:"🫁", count:76},
   {id:"otc",             label:"OTC",              icon:"💊", count:312},
   {id:"ayurvedic",       label:"Ayurvedic",        icon:"🌿", count:64},
+  {id:"generic",         label:"Generics",         icon:"💚", count:PRODUCTS.filter(p=>p.type!=='branded').length},
+  {id:"branded",         label:"Branded",          icon:"💙", count:PRODUCTS.filter(p=>p.type==='branded').length},
 ];
 
 const SUGGEST_BRANDS = ["Glycomet","Augmentin","Crocin","Atorvastatin","Pantocid","Amlokind","Azithral","Dolo","Metformin","Amoxicillin","Paracetamol","Pantoprazole"];
@@ -616,7 +618,7 @@ function DiscoveryHome({onSearch,onProductSelect,onAddToCart,cart}) {
         {/* Category grid */}
         <div style={{marginBottom:20}}>
           <SectionHead title="Browse by category" sub="Pan-India · verified sellers · Schedule H to OTC"/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(8,1fr)",gap:8}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:8}}>
             {CATEGORIES.map(cat=>(
               <div key={cat.id} onClick={()=>onSearch(cat.label)} style={{
                 background:C.white,border:`1px solid ${C.border}`,borderRadius:10,
@@ -813,7 +815,7 @@ function SearchResults({query,onProductSelect,onAddToCart}) {
   const results = PRODUCTS.filter(p=>{
     const q=query.toLowerCase();
     const matchQ=p.name.toLowerCase().includes(q)||p.mol.toLowerCase().includes(q)||
-      p.category.toLowerCase().includes(q)||p.mfr.toLowerCase().includes(q);
+      p.category.toLowerCase().includes(q)||p.mfr.toLowerCase().includes(q)||p.type.toLowerCase().includes(q);
     const matchSched=schedFilter.length===0||schedFilter.includes(p.sched);
     const matchCat=catFilter.length===0||catFilter.includes(p.category);
     const matchPrice=p.sellers[0].netrate>=priceRange[0]&&p.sellers[0].netrate<=priceRange[1];
